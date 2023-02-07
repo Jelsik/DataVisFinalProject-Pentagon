@@ -29,7 +29,7 @@ To this end we deployed the ____ module in Python to follow a path of supervised
 
 ### Table Layout
 
-![ERD](linktoERDgoeshere)
+![ERD](https://github.com/Jelsik/DataVisFinalProject-Pentagon/blob/JonBranch/SQL_And_CSV/Example_ERD.png)
 
 
 
