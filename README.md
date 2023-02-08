@@ -1,5 +1,7 @@
 # DataVisFinalProject-Pentagon
 
+-(WIP combining Owen and My own early ReadMe's into one merged file)
+
 ## Project Overview
 The loss of property has been a very serious problem that is widespread, numerous, and persistent. Local news reports abound on the rise in robbery. It is a sad truth, that whe people lose property to criminal activity, there is no guarantee it will be returned. 
 
