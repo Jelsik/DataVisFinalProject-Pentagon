@@ -7,6 +7,7 @@ __pycache__/
 *.so
 
 # Distribution / packaging
+.DS_Store
 .Python
 build/
 develop-eggs/
@@ -130,4 +131,4 @@ dmypy.json
 
 .os 
 
-.DS_Store
+
