@@ -50,7 +50,7 @@ Upon investigation, the columns `pub_agency_name`, `division_name`, and `county_
 
 The column `state_name` was singled out for bucketing.
 
-![StateDensity]()
+![StateDensity](https://github.com/Jelsik/DataVisFinalProject-Pentagon/blob/JonBranch/PicturesForReport/DensityStates.PNG)
 
 After analyzing the chart and the relative value counts, it was decided that states with 1,000 or fewer entries would be placed into an "Other_US_States/Territories" value.
 
@@ -60,11 +60,11 @@ At that point the data was binary encoded and exported into a freash csv for fur
 
 For the first consideration, the following model was constructed
 
-![Model1]()
+![Model1](https://github.com/Jelsik/DataVisFinalProject-Pentagon/blob/JonBranch/PicturesForReport/Model1.PNG)
 
 After being run for 100 epochs, the following results were observed:
 
-![Loss/Acc1]()
+![Loss/Acc1](https://github.com/Jelsik/DataVisFinalProject-Pentagon/blob/JonBranch/PicturesForReport/Model1Test.PNG)
 
 With a reasonably high accuracy score, it was a good start. However, the loss is considerably high. With the training model flattening out early on in the process, this model shows signs of overfitting, and more models are to be attempted.
 
