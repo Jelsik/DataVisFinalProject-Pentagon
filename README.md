@@ -1,4 +1,4 @@
-# Cargo Theft: An Unavoidable Problem within Supply Chain; A Research
+# Cargo Theft: An Unavoidable Problem within Supply Chain and A Research
 
 -(WIP combining The group's early ReadMes into one merged file)
 
