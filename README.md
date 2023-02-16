@@ -1,250 +1,205 @@
-# Cargo Theft: An Unavoidable Problem within Supply Chain and A Research
+Cargo Theft: An Unavoidable Problem within Supply Chain and a Research
 
--(WIP combining The group's early ReadMes into one merged file)
-
-## Project Overview
-The loss of property has been a very serious problem that is widespread, numerous, and persistent. Local news reports abound on the rise in robbery. It is a sad truth, that whe people lose property to criminal activity, there is no guarantee it will be returned. 
+# Abstract
+The loss of property has been a very serious problem that is widespread, numerous, and persistent. Local news reports abound on the rise in robbery. It is a sad truth, that whe people lose property to criminal activity, there is no guarantee it will be returned.
 
 The Federal Bureau of Investigation (FBI) has a Crime Data Explorer (CDE) application that allows visitors to explore their very comprehensive database of crime statistics. One data set of interest is the Cargo Theft Data, compiling information from four years of reports. With this data, the plan is to develop a machine learning model that can predict whether a lost property is likely to be recovered depending on various factors.
+#### Keywords
+Cargo theft; Clustering Analysis; Big data; Neural Network; Tableau Visualization.
 
-## Resources
+## 1.	Introduction 
 
-### Data Sources
+According the FBI, cargo theft is the “criminal taking of any cargo including, but not limited to, goods, chattels, money, or baggage that constitutes, in whole or in part, a commercial shipment of freight moving in commerce, from any pipeline system, railroad car, motor truck, or other vehicle, or from any tank or storage facility, station house, platform, or depot, or from any vessel or wharf, or from any aircraft, air terminal, airport, aircraft terminal or air navigation facility, or from any intermodal container, intermodal chassis, trailer, container freight station, warehouse, freight distribution facility, or freight consolidation facility. For purposes of this definition, cargo shall be deemed as moving in commerce at all points between the point of origin and the final destination, regardless of any temporary stop while awaiting transshipment or otherwise.” 
+Since the Labor Day weekend, panelists noted an uptick in thefts, with some recoveries even taking place while those involved in the theft were in the process of unloading the cargo. 
+Unfortunately, the problem with cargo theft today has been greatly impacted by the effects of COVID-19. During the ongoing lockdowns, presenters noted thieves are still working the way they always have, however law enforcement has had to change the way it works in consideration of coronavirus.  
+The problem with cargo theft isn’t necessarily the amount of what is stolen, but what is stolen. Common targets include food, beverages, and pharmaceuticals. As a result, consumers could be getting expired food or drugs, both with potentially terminal impacts.  
+Brand integrity is vitally important to shippers and should be to consumers as well. From a safety standpoint, consumers should be able to trust that what they consume is indeed safe to do so.  
 
-- CT_2013_2021.csv
+To limit the impact of such theft, the NICB recommends a layered approach: 
+- Screen all employees, including drivers, warehouse employees, and those with access to shipping information. 
+- Train employees making certain to educate truck drivers in hijack awareness and prevention. Training safeguards the employee, trailer, tractor, cargo, and customers.   
+- Be smart in selecting transportation partners, making certain they share your security philosophy.  
+- Implement in-transit security measures. Cargo theft can be pre-planned or opportunistic.  
+- Keep a vigilant eye. Include countersurveillance in the duties of your security guards. Trucks and cargo are most vulnerable to theft when sitting idle.  
+- Take advantage of technology, installing alarm surveillance systems and responding to all alerts. Ensure the perimeter, entrances, building doors, and windows are well lit. Vehicle and cargo tracking, immobilizers, and advanced security seals are available.  
+-MConduct audits of the supply chain and look for gaps in shipment protection.
+This definition was developed, not as a legal description for prosecutorial purposes, but to capture the essence of the national cargo theft problem in the United States. The legal elements of knowledge and intent were intentionally omitted.
 
-The FBI CDE website (https://cde.ucr.cjis.gov) supplies this `csv` file along with a `docx` file explaining the information in the data set.
+## 2.	Literature Reviews
 
-### Software
+Among the limited studies on cargo theft in the current literature, the majority focused on the countermeasures against different types of cargo theft accidents and the others were related to the exploration of the nature of cargo theft including the probabilities of the accidents and the relevant influential factors.  
 
-The machine learning models are developed in Python within the machine learning environment (mlenv):
+Ekwall and Lantz (2016), used Academic understanding of risk (e.g., numbers, causes, and classifications) is insufficient to enable risk prevention or management. Each risk depends upon its environment and context; thus, for risk managers to prevent or manage risks, they must understand them within a broad context. This article provides a detailed analysis and assessment of supply chain risks related to cargo theft. The research method is deductive, with the analysis based on the data in the Transported Asset Protection Association's (TAPA) transport-related crime database. The results are analyzed and discussed within a frame of reference based on supply chain risk management literature and on the premise that cargo theft risk is a function of both impact and probability. The findings show that practitioners can understand and address cargo theft risks more effectively when they examine the frequency and impact of such theft separately. The article also concludes that risk and related theft should be considered in the context of criminological theories.
 
-- Python 3.7.15
-- Jupyter Notebook 6.5.2
-- Pandas 1.3.5
-- Numpy 1.21.5
-- scikit-learn 1.0.2
-- imbalanced-learn 0.10.1
-- plotly 5.12.0
-- hvplot 0.8.2
-- TensorFlow 2.11.0
+Ekwall and Lantz (2017), used in this study is based on a system-theoretical approach. The research method is deductive as the analysis is based on secondary data and results from a questionnaire. The results are analyzed based on supply chain risk management (SCRM) and criminology theories.
 
-## Data Pre-Processing
-The first steps after importing the dependencies and the raw data include seeing what the columns are in the data set, how many unique values are in each column, and how many (if any) null values and duplicated entries exist. Interestingly, there appear to be two columns in the data set that look very similar to two other columns; and a quick check verifies this. The data set contains columns that report the code for various things with a neighboring column containing the name/description that corresponds to the code value. This renders the code columns unnecessary for the purposes of this project. Thus, the first set of transformations drops the identifier column, the clone columns, and the code columns as well as all duplicate entries. The large number of null values merit further investigation.
+Ebel (2019), in March 2006 the United States Federal Government mandated that by December 31st, 2006 data on cargo theft in the U.S. be reported in its own section of the Uniform Crime Report produced by the Federal Bureau of Investigation. Cargo theft in the United States represents not only the loss of property by the owner, but also threats to the U.S. economy and national security. With the data compiled by the FBI through mandatory reporting by state and local agencies, certain significant characteristics determined through statistical analyses may be able to help identify who likely suspects are for instances of cargo theft.
 
-Focusing on the null values, each column with null values is examined for the values contained within. Some columns are observed to contain values corresponding to "Unknown" (or to 0 if the column is a numeric type), so null values are simply binned into that particular value. The two exceptions to this are the `pub_agency_unit` and the `date_recovered` columns; the date of recovery only contains values if the lost/stolen property was recovered at all, and the agency unit column was found to be a placeholder that held a value only if the public agency name contains two parts and was thus split accordingly. In light of the project, this column was deemed unnecessary and thus dropped.
+Lorenc and Kuznar (2020), used Artificial Neural Networks (ANN) and Machine Learning (ML) methods to predict the probability of cargo theft in railway transport, respectively. Although showing some attractiveness, the methods failed to disclose the joint significance of multiple risk factors and their interdependency, leading to limited insights on prevention measures development.
 
+Song and others (2020), used a data-driven approach to predict the theft risk of bulk cargo in ports based on the data from Guangzhou Port Group and Guangzhou Port Security Bureau in China. Various binary classifiers including OneR, Decision Tree (DT), Random Forest (RF), Naïve Bayesian (BN), and BN were compared, and the result showed that BN was a suitable predictive model. However, the BN structures derived from two different structure-learning algorithms were different, requiring subjective knowledge to configure the final structure. In addition, the results could not reflect the effects of multiple states of the identified risk factors.
 
-## The Model
+Liang and others (2022), used Risk analysis of cargo theft from freight supply chains using a data-driven Bayesian network study exposes some limitations to be addressed in future research, for instance, some states with very low probabilities in TAPA's (Transported Asset Protection Operandi) database are combined as one state ‘other’. However, some of these states (e.g., electronics in the product category and hijacking in the accident category) have achieved industrial attention, thus their effects combined with other RIFs (Risk Influential Factor) need to be further investigated in the future. Furthermore, the designed flow of data analysis in this study focuses on the UK area and the model can be applied in other areas for cargo theft analysis to develop the best practice of protection through the benchmarking of the performance of different areas in future.
 
-Two models will be untiilized to attempt to answer this question: Logistic Regression, and a Neural Network.
+Ekwall and Lantz (2022), used in this paper examines weekly and annual seasonality in incident categories to find patterns and trends in transport crime globally, concerning the value of stolen goods, incident frequency and incident category. Secondary data is utilized to analyse a contemporary challenge in logistics and supply chain research, namely theft and robbery of goods during shipment. The research is based on the TAPA global IIS transport-related crime database. Incident frequencies and mean values are analysed primarily with chi-square tests and analyses of variance (ANOVAs). The results are analysed and discussed within a frame of reference consisting of theories from logistics and criminology. The main conclusion is that there is an annual as well as a weekly seasonality of most incident categories, but the patterns vary among incident categories. The results are primarily limited by the content and classification within the TAPA IIS database.
 
+## 3.	Methods 
 
-## Logistic Regression
-## LOGISTICS REGRESSION ANALYSIS
-### 1. Introduction
-Logistic regression, which is one of the most used methods as an alternative to discriminant analysis and cross tables, is used when the assumptions of normal distribution and common covariance are not met. The reason why the logistic regression does not meet these assumptions is from the data set to be analyzed. In other words, since the dependent variable is on the ordinal and classifier scales, the independent variables can also be on a continuous or categorical scale. When it is desired to add a variable on a limiting or categorical scale to the logistic regression model, some transformations should be made on the variables. These transformations can be one of the link function, logit or probit transformations, giving a linear relationship between the dependent variable and the independent variable. For example, we can say that an increase of 1 unit in the independent variables causes a change in the independent variable as much as the product of the result obtained as a result of these transformations and the coefficient in the model. It should also be noted that; Since there are transformations on the variables in the model, the maximum likelihood method is used to estimate the coefficients of the variables.
-In order for the obtained model to make sense, the significance of the coefficients of the independent variables in the model should be tested. The tests guide the construction of the best model with the fewest variables. Since the logistic regression model is not like the classical regression model, the likelihood ratio test, Score test and Wald tests are used to test the coefficients. The main problem here is; Whether the model contains more information about the dependent variable than the model without variables.
-While interpreting the coefficients in the logistic regression model, odds (differences) and odds ratio (difference ratio) are used. Odds are the natural logarithms of the logit transform. Odds ratio is the ratio of odds calculated for x=1 to odds calculated for x=0. The natural logarithm of the difference ratio gives the log odds ratio. The variables to be included in the model are decided by interpreting the likelihood ratios and Wald statistics.
-One of the criticisms brought to logistic regression is that it becomes difficult to establish a model as the number of variables increases. In other words, as the number of variables increases, the operation to be performed increases. Making such transactions is not as easy as it seems. In addition, the increase in the number of variables causes the estimated standard errors to be higher. This increases the dependency on the population of the data set.
+### 3.1. Clustering Analysis
+Cluster analysis is a statistical research method that allows researchers to separate or group a set of objects into small but distinct clusters whose properties differ from other such distinct clusters.
 
-Logistic Regression Model;
-L=ln(pi/1-pi)=β0+ β1Xi+ei
+This analysis method in research is often based on statistical data analysis used in various fields including pattern recognition, machine learning, insight management in market research, data cleaning, bioinformatics, and more.
 
-Since the parameters of the logistic regression model cannot be obtained analytically, they are estimated with the maximum likelihood (ML) technique as an alternative method.
-The assumptions about the type and distribution of the variables are few and the results can be easily interpreted, etc. For these reasons, logistic regression method has become a frequently used regression method in recent years. Different logistic regression methods are applied according to the number of categories of the qualitative dependent variable and whether the categories are unordered (nominal) or ordered (ordinal).
+The purpose of cluster analysis is to find groups of objects that have different behavioral changes but whose key features and objects are in the same control group. An excellent example of this research method is banks using qualitative and quantitative data to identify trends in claims transactions among customers. Using cluster analysis helps them conclude and better understand fraudulent claims.
 
-### 2. Binary Logistic Regression
-It is a logistic regression method in which the dependent variable has two categories. While coding, 0 for no risk and 1 for risk is often used when coding. There are no restrictions on the type of arguments. The independent variables can be continuous numeric, discrete numeric, unordered or sortable qualitative variable types.
+#### 3.1.1. Cluster Analysis Methods
 
-#### 2.1. Estimation of Regression Coefficients
-The estimation of the regression coefficients in logistic regression analysis is usually calculated using the maximum likelihood method. This function specifies the probability of the observed data as a function of unknown parameters. The values that make this function the largest are the maximum likelihood estimators of the unknown parameters.
+##### 3.1.1.1. Hierarchical Clustering
+Our main goal is to subset the observations according to their similarity to each other.
 
-#### 2.2. Testing the Significance of the Coefficients
-After the coefficient estimates are obtained, the significance of the variables/coefficients in the model is tested. It is examined whether the relationship between the independent variables in the model and the response variable (dependent variable) is significant.
-In logistic regression, the whole significance of the model is made with the Likelihood Ratio Test, while the significance of the variables in the model is examined with one of the Wald or Score tests.
+In this method, the units are brought together at different stages and clusters are determined sequentially, and it indicates at which distance level the units that will enter the determined clusters are cluster elements.
 
-#### 2.3. Likelihood Ratio Test
-Considering that there is only one independent variable, first the model with only the constant term is created. Then the model with the constant term and the independent variable is created. The likelihood ratio test value is calculated by multiplying the difference between the two values obtained from these models by -2.
-In order to be able to compare models in the likelihood ratio test, all models must be compared on the same data set.
+In hierarchical clustering methods, the number of clusters is decided visually. Dendogram, a tree diagram, is used in decision making.
+We can express hierarchical clustering methods as Associative Clustering Method and Partitioner (Parser) Method.
 
-#### 2.4. Wald Test
-It is stated that the likelihood ratio test and the Wald test in large samples give asymptotic similar results. Although the theoretical information on which test gives better results in small samples is insufficient, some studies have suggested using the likelihood ratio test instead of the Wald test.
+In the combinatorial clustering method, each observation is initially considered as a cluster. Then, the 2 closest observations (clusters) are determined in the data set and a new cluster is formed by combining them according to their similarities. This process (merging both clusters according to their similarity) continues to combine clusters until they are grouped under a single cluster.
+As a first step in the discriminant clustering method, the cluster in which all observations are together is divided into two subsets, and then the new clusters formed are divided into dissimilar subsets. This process is repeated until we get as many clusters as the number of observations.
 
-#### 2.5. Score Test
-There is no need to calculate the maximum likelihood estimation in the score test. Therefore, its biggest advantage is that it shortens the calculation processes a lot.
-The score test statistic conforms to the standard normal distribution.
+Cluster analysis helps researchers and statisticians understand data more deeply and make better decisions. Data can be part of the following.
+Data analysis is still performed on a research platform where data is plotted on a graph. However, as mentioned above, various cluster analysis methods are used in accordance with research needs.
 
-### 3. Sequential Logistic Regression Analysis
-Ordinal logistic regression; It tries to determine the cause and effect relationship between the dependent variable and the independent variables. It is a method used in ordinal scaled data with at least three categories of dependent variable.
-In ordinal logistic regression, the independent variables can be categorical or continuous. Only the covariate entering the model should be continuous. For categorical variables, estimations are made for each category separately.
+- Hierarchical clustering or link-based clustering analysis
+Hierarchical clustering or link-based clustering analysis is the most widely used method in cluster analysis. In this method, data exhibiting similar components are grouped to form a cluster.
 
-### 4. Nominal Logistic Regression
-It tries to determine the cause and effect relationship between the dependent variable and the independent variables.
-Independent variables can be categorical or continuous variables. The covariate entering the model should be continuous. For categorical variables, estimations are made for each category separately.
+These clusters are then associated with other clusters showing the same characteristics to form other clusters.
+The other method in hierarchical clustering is the divisive method, where you start with a set of data and then separate them into smaller clusters of similar information. In this method, connectivity criteria between clusters are better defined in order to understand the distance and relationship between clusters. It is important to note that there is no single data partitioning in this analysis model.
 
-## ARTIFICIAL NEURAL NETWORK
-Artificial Neural Network (ANN) is a computer system inspired by biological neural networks built on interconnected artificial neurons to create artificial brains. It is designed to analyze and process information like a human. The Neural Network has self-learning capabilities to produce better results as more data becomes available.
-Artificial Neural Network (ANN) consists of four basic parts:
+- Centroid based clustering
+In this clustering method, clusters are created but defined by a single central vector point. Using the k-means method clustering algorithm, a central point is found on the axis with a defined target. Smaller clusters are then connected to this center so that the distance between the clusters and this central point is minimized.
+
+A disadvantage of this cluster analysis technique is that the number of clusters, k-clusters, is defined in the first place, which limits data analysis and representation.
+
+- Network-based clustering
+The distribution-based clustering analysis method groups data into objects with the same distribution. This method is the most widely used statistical analysis method. The distinctive feature of this method is simple random sampling to collect sample objects from a distribution.
+
+This model works best when a correlation needs to be shown between attributes and objects. However, the disadvantage of this model is that since objects are grouped according to predefined attributes, there can be an element of bias in clustering as each object must fit a distribution.
+
+- Density-based clustering
+Density-based clustering is the fourth widely used cluster analysis technique in which clusters are defined based on density compared to the overall data set. Objects in sparse areas are noise and boundary points as they typically separate clusters in graphical representation.
+
+DBSCAN is the most widely used density-based clustering method. However, one disadvantage of this method is that a decrease in density is required to show the difference between the two clusters, and this is often unnatural.
+
+##### 3.1.1.2. Non-Hierarchical Clustering
+Non-hierarchical clustering methods can be used when we have any information about the number of clusters. There are many non-hierarchical clustering methods such as k-means method, maximum likelihood method, fuzzy method. K-means method, one of the non-hierarchical clustering methods, is used in unsupervised learning.
+
+In the K-Means Method, first the number of clusters and a random cluster center for each cluster are determined, then the distance of each observation unit from each cluster center is calculated and the observations are assigned to the clusters closest to them. When the initial assignments for all observations are finished, the cluster center is calculated again for each cluster and these operations are repeated for the specified number of iterations. (For example, for 3 iterations, the first assignments are made, cluster centers are determined again, the distances of all observations are calculated according to the new cluster centers, and they are assigned to the nearest cluster for the second time, this process is repeated 3 times.)
+
+#### 3.1.2.	Distance Measures Used in Cluster Analysis
+In cluster analysis, it is tried to measure the similarity levels between the units by measuring the distances of the units from each other. The lower the distance values of the units from each other, the stronger the similarity of the two units is said. Commonly used methods to measure similarity of quantitative data are:
+- Minkowski Distance
+- Manhattan City-Block Distance
+- Euclid
+- Mahalanobis
+
+#### 3.1.3.	Stages of Cluster Analysis
+- Creation of the data matrix.
+- Obtaining the similarity or distance matrix.
+- Determination of clustering method.
+- Interpretation of results.
+
+### 3.2. Artificial Neural Network (ANN) 
+Artificial Neural Network (ANN) is a computer system inspired by biological neural networks built on interconnected artificial neurons to create artificial brains. It is designed to analyze and process information like a human. The Neural Network has self-learning capabilities to produce better results as more data becomes available. Artificial Neural Network (ANN) consists of four basic parts:
 
 Layers: The entire learning process takes place in layers. There are 3 layers,
-1) Input Layer 
-2) Hidden Layers 
-3) Output Layer
+- Input Layer
+- Hidden Layers
+- Output Layer
 
-Feature and tag: Data entry to network (properties) and exit from network (tags)
-Error Calculation Function (loss function): The metric used to predict the performance of the learning phase
-Optimizer: The part that improves learning by updating information on the network.
+![Screen Shot 2023-02-16 at 1 40 51 PM](https://user-images.githubusercontent.com/26927158/219482434-27ef12a7-baed-4e9f-8c90-3a5fc9df595e.png)
+
+- Feature and tag: Data entry to network (properties) and exit from network (tags) Error Calculation Function (loss function): The metric used to predict the performance of the learning phase Optimizer: The part that improves learning by updating information on the network.
 
 A neural network takes the input data and transmits it to the collection of layers. A neural network needs to evaluate its own performance with a loss function. The Error Calculation Function gives the neural network an idea of the path it must follow before it can master the information. The network needs to improve its knowledge with the help of an optimizer.
 
 The program takes the input values and transmits them to two interconnected layers. Imagine you have a math problem, the first thing you do is read the relevant section to solve the problem. You apply what you know to solve the problem. The probability of success in the first stage is quite low, the same is true for the neural network. Its prediction when he first saw the data may not match the expected results perfectly. The network uses an optimizer to improve its knowledge. With a simple analogy, you might think that the optimizer's responsibility is to reread the relevant section. By re-reading you gain new insights and gains. Similarly, using the neural network optimizer, it updates its knowledge and tests its new knowledge to check how much it needs to learn. The program repeats these steps until it makes the lowest possible error. Returning to our math problem analogy, this means that you read the textbook chapter many times before you fully understand the course content. If you continue to make mistakes even after reading it many times, it means that you have reached the knowledge capacity you can have with the existing material. To improve your score, you need to use a different textbook or test with a different method. The same is true for a neural network. If the error rate does not decrease, it means that the neural network cannot learn anything else with this architecture. To improve knowledge, the network needs to be better optimized.
 
-#### Activation function
+#### 3.2.1.	Activation function
 The activation function for a node defines the output based on the given inputs. An activation function is needed to enable the network to learn the nonlinear model. Commonly used activation function: Relu, Rectified linear unit. The function returns zero for all negative values.
 
-##### Other activation functions are:
+Other activation functions are:
 - Piecewise Linear
 - Sigmoid
 - Tanh
 - Leaky Relu
 
-The critical decision to make when building a neural network is:
-- How many layers are there in a neural network?
-- How many hidden units are there for each layer?
-A neural network with many layers and hidden units can learn the complex nature of the data, but it can make the computation of the network costly.
+#### 3.2.2.	Error Calculation Function (Loss Function)
+After defining the hidden layers and the activation function, you need to specify the error calculation function and the optimizer. The Binary Cross Entropy Loss Function is widely used for binary classification. In linear regression, Mean Squared Error is used. The Error Calculation Function is an important metric for estimating the optimizer's performance. This metric is minimized during learning. You need to choose this amount carefully, depending on the type of problem you are facing.
 
-##### Error Calculation Function (Loss Function)
-After defining the hidden layers and the activation function, you need to specify the error calculation function and the optimizer.
-The Binary Cross Entropy Loss Function is widely used for binary classification. In linear regression, Mean Squared Error is used.
-The Error Calculation Function is an important metric for estimating the optimizer's performance. This metric is minimized during learning. You need to choose this amount carefully, depending on the type of problem you are facing.
-
-##### Optimizer
+#### 3.2.3.	Optimizer
 The Error Calculation Function (Loss Function) is a measure of the model's performance. The optimizer helps to improve the weights (Neurons) of the network to reduce the loss. There are different optimizers available, but the most common is Stochastic Gradient Descent.
 
-##### Other commonly used optimizers are:
+Other commonly used optimizers are:
 - Momentum Optimization,
 - Nesterov Accelerated Gradient,
 - AdaGrad,
 - Adam Optimization.
 
-## Results
+#### 3.2.4.	How do neural networks learn?
+Unlike other algorithms, neural networks cannot be programmed directly with deep learning. Rather, just like a child's developing brain, they need to learn information. Learning strategies are implemented in three ways:
 
-#### Table 1. VIF Values
-<img width="256" alt="Screen Shot 2023-02-09 at 6 23 09 PM" src="https://user-images.githubusercontent.com/26927158/217978573-e0ab3d37-08fc-4f90-aff3-22e075fc8316.png">
+- Supervised learning: This learning strategy is the simplest as the computer has a dataset that it goes through and the algorithm is modified until it processes the dataset to achieve the desired result. 
+- Unsupervised learning: This strategy is used when there is no dataset available to learn. The neural network analyzes the dataset and tells the neural network how far the target is. The neural network is then adjusted to increase the accuracy of the algorithm. 
+- Reinforced learning: In this algorithm, the neural network is augmented for positive results and the probability of negative results is low.
 
-The Inflation Factor of Variance (VIF) measures the severity of multicollinearity in regression analysis Regression Analysis Regression analysis is a set of statistical methods used to estimate the relationships between one dependent variable and one or more independent variables. It can be used to evaluate the strength of the relationship between variables and to model the future relationship between them. . It is a statistical concept that indicates the increase in the variance of a regression coefficient as a result of linearity.
-In logistic regression, if the VIF values of the variables are higher than 10, it will cause a multicollinearity problem. Therefore, in the second stage of this model, those with a VIF value of more than 10 will be removed from the model.
+##### 3.2.4.1. Advantages of Neural Network
+- It can do more than one job at the same time with its parallel processing capability. 
+- The information is stored not only in a database but in the entire network. 
+- Depending on how important the missing information is, it can remove missing information. 
+- It can model big data and model large data with its ability to learn the hidden relationships in the data without commanding any fixed relationship. 
+- It can predict the output of data with the ability to generalize and infer relationships on unseen data.
 
-#### Table 2. Logit Regression Model
-<img width="539" alt="Screen Shot 2023-02-09 at 6 23 26 PM" src="https://user-images.githubusercontent.com/26927158/217978800-42a35983-9813-4da0-9e8e-f00d8e066873.png">
+##### 3.2.4.2. Disadvantages of Neural Network
+- Neural network architecture can only be found by trial and error to determine the appropriate network structure. 
+- It needs high processor requirements for parallel processing capabilities.
 
-Looking at the model in general,
-Even if no variables in the model have an effect on the model, the number of dependent variables will be -0.8176. The overall significance of the model is since p = 0.00 < 0.05, it is significant at 95% confidence level.
+##### 3.2.4.3. Usage areas of artificial neural networks
 
-#### Table 3. GLM Model
-<img width="578" alt="Screen Shot 2023-02-09 at 6 23 39 PM" src="https://user-images.githubusercontent.com/26927158/217979205-29d94993-56e5-4c3b-9057-419f204a2dde.png">
+Image recognition was one of the first areas where neural networks were successfully applied, but the technology's uses have expanded into many more areas, including: Chatbot, translation, stock market forecast, delivery driver route planning and optimization, drug discovery and development. 
 
-This model also shows that the binomial, that is, the target variable (the dependent variable) is categorical. The Pearson R-squared value is worth making a significant contribution to logit estimation.
+## 4.	Data Pre-Processing
+The collected data may be incomplete, inconsistent or out of date. Pre-processing should be done for quality data.
 
-The pseudo R squared value can be thought of as the log likelihood of the model with no independent variables and only the constant, the general sum of squares, and the log likelihood of the model with the independent variables, that is, now squares. This value should be between 0.20 and 0.40, but this ratio is low for our model. (0.056)
+### 4.1. Data Preprocessing Operations
 
-#### Table 4. Odds Ratio Values for Variables
-<img width="447" alt="Screen Shot 2023-02-09 at 6 23 59 PM" src="https://user-images.githubusercontent.com/26927158/217979318-2861d0fb-a339-4c60-a2a2-b6d6c77b0969.png">
+#### 4.1.1. Data Cleaning
+Cleaning outlier data, correcting noise data, removing inconsistencies, filling in missing values. 
+- Ignoring data, not processing
+- Filling in missing ones manually (costly and difficult)
+- Automatically fill
 
-Odds ratios are exponential values of beta coefficients.
-dds ratios must be statistically significant in order to be interpreted. First, we can intuitively examine whether this ratio is not equal to 1. 
+#### 4.1.2. Data Integration
+Database, data cube or file integration. Combining data from different sources and presenting converted data to users.
 
-If this value is 1, it is clear that the factor in question will not have any effect on the relevant outcome variable. Of course, we need a confidence interval or significance value for this.
+#### 4.1.3. Data Transformation (Normalization)
+Normalization means reducing the input value. It is to deal with the data in a single order in cases where the difference between the data is too much. The aim here is to carry the data in different systems to a common system and to ensure that they can be compared. We can mention three common methods.
 
-If the confidence interval of our odds ratios (θ) covers 1, it is statistically insignificant.
-According to our hypotheses, when Ho is rejected according to a certain margin of error (generally 5%), our odds ratio is statistically significant (p<0.05).
+- min-max normalization:
+It handles the smallest and largest values in the data. Other data are normalized according to these values. The aim here is to normalize the smallest value to 0 and the largest value to 1, and spread all other data to this 0-1 range.
+The major disadvantage of min-max normalization is that it does not handle the outlier well.
 
-So, how to interpret the odds ratio that we found significant? Extremely simple. If our odds ratio is greater than 1, the relevant factor increases the probability of the outcome variable. If our ratio value is less than 1, it also reduces the probability of occurrence.
-The exponential value (exp) of the beta coefficients we found in the logistic regression analysis is called the odds ratio. Similarly, by performing hypothesis testing, we can determine whether the independent variable in the logistic regression model is statistically significant.
+- Z Score Normalization:
+Z-score normalization is the data normalization strategy that avoids this outlier issue. 
 
-Odds ratios are mainly used in scientific research in medicine and health. It provides great functionality in testing the relationships between important outcome variables such as disease and related factors.
-We can say that the odds ratio values, which are generally 1, greatly increase the probability of the outcome variable in the model. These variables are; offense code, offender race and stolen value are variables.
+- Decimal Normalization:
+Normalization is performed by moving the decimal part of the values of the variable under consideration.
 
-#### Table 5. Confusion Matrix
-<img width="393" alt="Screen Shot 2023-02-09 at 6 24 20 PM" src="https://user-images.githubusercontent.com/26927158/217979478-d8cde921-34f0-426e-afa3-cedefa284053.png">
+#### 4.1.4. Data Reduction
+Volume reduction, data compression. Removal of unimportant attributes
 
-Of the data marked in the not recovered group in the test dataset, 21104 were classified correctly and 3449 were classified incorrectly. While it classified 8 of the theft in the recovered group correctly and 31 were classified incorrectly. 
+#### 4.1.5. Data Discrimination: Reducing data.
+The preprocessing stage is important for data mining to be successful. With preprocessing, the data is made available for further use. The success of this stage directly affects the final success. With a successful pre-processing stage, it will be possible to achieve precise and clear results.
 
-#### Table 6. Model Accuracy
-<img width="444" alt="Screen Shot 2023-02-09 at 6 24 28 PM" src="https://user-images.githubusercontent.com/26927158/217979581-2e8081de-87d5-4158-9f5c-1f6d171c9167.png">
-
-The accuracy score of this model is 86%. Looking at the classification report table; f1 score values are satisfactory.
-
-## Neural Network
-
-### Processing the Data before running the model.
-After intaking the data from `Binary_Classifier.csv`, further analysis was done to make the data as useable as possible when binary encoded, without compromsing the value of the data.
-Upon investigation, the columns `pub_agency_name`, `division_name`, and `county_name` were dropped after being considered superflous. The comparison their data held of city vs. county, and region of U.S. were adequetely covered elsewhere.
-
-The column `state_name` was singled out for bucketing.
-
-![StateDensity](https://github.com/Jelsik/DataVisFinalProject-Pentagon/blob/JonBranch/PicturesForReport/DensityStates.PNG)
-
-After analyzing the chart and the relative value counts, it was decided that states with 1,000 or fewer entries would be placed into an "Other_US_States/Territories" value.
-
-At that point the data was binary encoded and exported into a freash csv for further use.
-
-### Running Some Models
-
-For the first consideration, the following model was constructed
-
-![Model1](https://github.com/Jelsik/DataVisFinalProject-Pentagon/blob/JonBranch/PicturesForReport/Model1.PNG)
-
-After being run for 100 epochs, the following results were observed:
-
-![Loss/Acc1](https://github.com/Jelsik/DataVisFinalProject-Pentagon/blob/JonBranch/PicturesForReport/Model1Test.PNG)
-
-With a reasonably high accuracy score, it was a good start. However, the loss is considerably high. With the training model flattening out early on in the process, this model shows signs of overfitting, and more models are to be attempted.
-
--future models go here
-
-### Conclusions On the Two Models
-
-## Outline for the Dashboard with a storyboard of visualizations
-
-### Goal and Objectives: 
-
-The goal is to present the audience the dataset used for our machine learning model to predict whether a lost property is likely to be recovered.
-
-### Visualizations to be presented: 
-
-* Table:
-
-      To present the analysis output how we selected the input variables. 
-
-* Confusion Matrix and Classification Report 
-
-* Map:
-
-      To present the geographical information such as total number of crimes by state. 
-  
-* Pie: 
-
-      To present the recovery flag information. 
-
-* Graphs:
-
-      To present 
-         - Population group
-         - Type of offense
-         - Location where the incident occurred 
-         - Stolen property 
-         - Stolen value    
+## 5.	Analysis and Results
 
 
 
-
-
-
-
-
-
-### Working Table Layout Example
-
-![ERD](https://github.com/Jelsik/DataVisFinalProject-Pentagon/blob/JonBranch/SQL_And_CSV/Example_ERD.png)
