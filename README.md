@@ -182,7 +182,7 @@ The accuracy score of this model is 86%. Looking at the classification report ta
 After intaking the data from `Binary_Classifier.csv`, further analysis was done to make the data as useable as possible when binary encoded, without compromsing the value of the data.
 Upon investigation, the columns `pub_agency_name`, `division_name`, and `county_name` were dropped after being considered superflous. The comparison their data held of city vs. county, and region of U.S. were adequetely covered elsewhere.
 
-The column `state_name` was singled out for bucketing.
+The column `state_name` was one singled out for bucketing.
 
 ![StateDensity](https://github.com/Jelsik/DataVisFinalProject-Pentagon/blob/JonBranch/PicturesForReport/DensityStates.PNG)
 
@@ -202,7 +202,24 @@ After being run for 100 epochs, the following results were observed:
 
 With a reasonably high accuracy score, it was a good start. However, the loss is considerably high. With the training model flattening out early on in the process, this model shows signs of overfitting, and more models are to be attempted.
 
--future models go here
+#### Attempting To Improve Score/Observations
+
+To begin with, smaller model was deployed onto the same dataset as tested for the original. with two layers of 3 before the output layer.
+
+![3-3-1](model3)
+
+The results were as follows:
+      * Loss was reduced
+      * Accuracy remained similar
+![test3](link)
+
+Following this success, a smaller model was deployed but accuracy suffered immensely.
+
+A second look was then taken at the dataset. The columns `offender_age`, and `offender_ethnicity` were considered superflous, and removed as well in order to reduce the number of object-oriented columns generated during testing. Results, however, were poor.
+
+The dataset was then considered again, with the original data, however , further bucketing was included. These results suffered as well, with large increases in loss and reduction in accuracy.
+
+
 
 ### Conclusions On the Two Models
 
