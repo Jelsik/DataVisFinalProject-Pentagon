@@ -1,4 +1,4 @@
-Cargo Theft: An Unavoidable Problem within Supply Chain and a Research:.
+Cargo Theft: An Unavoidable Problem within Supply Chain and a Research
 
 # Abstract
 The loss of property has been a very serious problem that is widespread, numerous, and persistent. Local news reports abound on the rise in robbery. It is a sad truth, that whe people lose property to criminal activity, there is no guarantee it will be returned.
