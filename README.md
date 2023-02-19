@@ -205,19 +205,19 @@ The preprocessing stage is important for data mining to be successful. With prep
 
 For this study, first of all, data visualizations were made on Tableau. Visualization constitutes the basic structure of a study. In order to decide which analysis methods should be applied in a study, first need it is necessary to make visualizations. In this study, the visualizations of each variable are presented on the Tableau study.
 
-#### Map 1. Cargo Theft Ranking by State
+##### Map 1. Cargo Theft Ranking by State
 ![Map1](https://user-images.githubusercontent.com/26927158/219973137-12eb656b-c116-4efc-8174-1009ea7ee40b.png)
 
 In the map graph above, the states with the highest rates for cargo theft crime are listed from the lowest to the lowest. States with the highest number of cargo theft crimes are indicated with the darkest color. Visualization colors progress from least to most. In the region with the least cargo theft crime, there are 4 and the most 28,218 in the map scale.
 
 The state with the most cargo theft crime, that is, the region with the darkest visualization scale, is the state of North Carolina. The state with the second most cargo theft belongs to the state of Georgia, which is much less than half of North Carolina. The third place with the highest number of cargo theft is Ohio. The state of Texas, where we currently live, ranks fifth with 10,904 stolen items. As can be seen, there is no linear relationship between the size of provinces and the number of cargo thefts.
 
-#### Graph 1. Recovered and Unrecovered Items Percentage
+##### Graph 1. Recovered and Unrecovered Items Percentage
 ![Graph 1](https://user-images.githubusercontent.com/26927158/219973149-38a87392-5a96-44a6-a793-3fd7c6a8923f.png)
 
-The adjacent chart shows the recovered and unrecovered percentages of cargo theft products. The percentage that is recovered is shown in red, while the percentage that is unrecovered is shown in yellow. According to this graph, while the number of recovered cargo theft products is 18,180, it is 13.34%, and the unrecovered cargo theft products are 118,059 and 86.66%.![image](https://user-images.githubusercontent.com/26927158/219980345-de4a912c-1c8c-4349-a5ac-74e745627b20.png)
+The adjacent chart shows the recovered and unrecovered percentages of cargo theft products. The percentage that is recovered is shown in red, while the percentage that is unrecovered is shown in yellow. According to this graph, while the number of recovered cargo theft products is 18,180, it is 13.34%, and the unrecovered cargo theft products are 118,059 and 86.66%.
 
-#### Graph 2. Recovered and Unrecovered Ranking by State
+##### Graph 2. Recovered and Unrecovered Ranking by State
 ![Graph 2](https://user-images.githubusercontent.com/26927158/219973193-c606304b-bfce-4415-977f-ab72bc567dc9.png)
 
 The bar chart in graph 2 shows the number of recovered and unrecovered cargo theft items. These states are ranked from the states with the highest number of cargo theft to the least, and recovered cargoes are shown in red and unrecovered cargoes in yellow.
@@ -225,10 +225,10 @@ The bar chart in graph 2 shows the number of recovered and unrecovered cargo the
 If we look at the states in the top 8 of the list, North Carolina is the state with the most cargo theft products recovered, while North Carolina is the region with the most unrecovered products. Texas is the second most recovered cargo. However, the number of unrecovered is much lower compared to other states. While Georgia is the second state with the most cargo theft, the number of unrecovered and the number recovered is very low. In Ohio, on the other hand, the number of cargo theft recovered is higher than in Georgia.
 
 
-#### Graph 3. Sort of Stolen Properties Recovered and Unrecovered
+##### Graph 3. Sort of Stolen Properties Recovered and Unrecovered
 ![Graph 3](https://user-images.githubusercontent.com/26927158/219973231-9f4df97f-e77b-4928-975b-db4f6a2fd7cc.png)
 
-Chart 3 shows the order of stolen goods by recovery and unrecovered status.
+Graph 3 shows the order of stolen goods by recovery and unrecovered status.
 
 In the part that says other in the first line, we can specify the products that are outside the list. Money is in the second rank and the number of recovered is very low. The most recovered item was the automobile, and the nearly equal number of recovered and non-recovered cars. Trucks residual type is few, but it can be interpreted as the product with the most recovered. Although it is very common for money-based products such as credit cards or wallets to be stolen, the number and probability of not being recovered is very high.
 
@@ -243,6 +243,56 @@ The software application to be written in the ER diagram must have all data hold
 In the ER diagram above, there are the tables to be created in the database and the data to be kept in the tables. Only data headers are kept in these tables. There is no need to write the types of the data. The relationships between the tables prepared in the ER diagram are determined.
 The database can be designed easily by looking at the prepared ER diagram.
 In addition, with the data set downloaded from the first FBI Crime site, it can easily be said which columns were included in our analysis and which columns were cleared.
+
+### 5.3. Logistic Regression Model
+
+##### Table 1. VIF Values
+<img width="300" alt="Screen Shot 2023-02-19 at 5 41 02 PM" src="https://user-images.githubusercontent.com/26927158/219982550-aa3d829f-46cf-4821-98a7-1e867711aa68.png">
+
+The Inflation Factor of Variance (VIF) measures the severity of multicollinearity in regression analysis Regression Analysis Regression analysis is a set of statistical methods used to estimate the relationships between one dependent variable and one or more independent variables. It can be used to evaluate the strength of the relationship between variables and to model the future relationship between them. . It is a statistical concept that indicates the increase in the variance of a regression coefficient as a result of linearity. In logistic regression, if the VIF values of the variables are higher than 10, it will cause a multicollinearity problem. Therefore, in the second stage of this model, those with a VIF value of more than 10 will be removed from the model.
+
+##### Table 2. Logistic Regression Model
+<img width="600" alt="Screen Shot 2023-02-19 at 5 41 15 PM" src="https://user-images.githubusercontent.com/26927158/219982557-f737c43d-5775-4460-9214-b6806982345f.png">
+
+This model also shows that the binomial, that is, the target variable (the dependent variable) is categorical. The Pearson R-squared value is worth making a significant contribution to logit estimation.
+The pseudo R squared value can be thought of as the log likelihood of the model with no independent variables and only the constant, the general sum of squares, and the log likelihood of the model with the independent variables, that is, now squares. This value should be between 0.20 and 0.40, but this ratio is low for our model. (0.056)
+
+##### Table 3. Odds Ratio Values for Variables
+<img width="600" alt="Screen Shot 2023-02-19 at 5 41 27 PM" src="https://user-images.githubusercontent.com/26927158/219982561-c5453adb-ed3b-4471-8340-545198f61098.png">
+
+Odds ratios are exponential values of beta coefficients. dds ratios must be statistically significant in order to be interpreted. First, we can intuitively examine whether this ratio is not equal to 1.
+
+If this value is 1, it is clear that the factor in question will not have any effect on the relevant outcome variable. Of course, we need a confidence interval or significance value for this.
+
+If the confidence interval of our odds ratios (θ) covers 1, it is statistically insignificant. According to our hypotheses, when Ho is rejected according to a certain margin of error (generally 5%), our odds ratio is statistically significant (p<0.05).
+
+So, how to interpret the odds ratio that we found significant? Extremely simple. If our odds ratio is greater than 1, the relevant factor increases the probability of the outcome variable. If our ratio value is less than 1, it also reduces the probability of occurrence. The exponential value (exp) of the beta coefficients we found in the logistic regression analysis is called the odds ratio. Similarly, by performing hypothesis testing, we can determine whether the independent variable in the logistic regression model is statistically significant.
+
+Odds ratios are mainly used in scientific research in medicine and health. It provides great functionality in testing the relationships between important outcome variables such as disease and related factors. We can say that the odds ratio values, which are generally 1, greatly increase the probability of the outcome variable in the model. These variables are; offense code, offender race and stolen value are variables.
+
+##### Table 4. Confusion Matrix
+<img width="450" alt="Screen Shot 2023-02-19 at 5 41 42 PM" src="https://user-images.githubusercontent.com/26927158/219982627-6b0bd897-c31e-40c8-9a3c-eac8af10b58e.png">
+
+Of the data marked in the not recovered group in the test dataset, 21104 were classified correctly and 3449 were classified incorrectly. While it classified 8 of the theft in the recovered group correctly and 31 were classified incorrectly.
+
+##### Table 5. Model Accuracy
+<img width="450" alt="Screen Shot 2023-02-19 at 5 41 53 PM" src="https://user-images.githubusercontent.com/26927158/219982682-89441fde-c419-4768-b5fe-cb3300d088a4.png">
+
+The accuracy score of this model is 86%. Looking at the classification report table; f1 score values are satisfactory.
+
+#### 5.3.1. Logistic Regression Model Results
+As a result of the examinations made on the model; The offender_sex, offender_race, and offender_ethnicity columns have been removed from work.
+
+However, the removal of these columns as a result of the study did not cause any change, especially in the accuracy value. You can access the second part of the logistic regression model review via the 'Cargo Theft Analysis.ipynb' study.
+
+
+
+
+
+
+
+
+
 
 
 
