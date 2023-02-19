@@ -22,7 +22,7 @@ To limit the impact of such theft, the NICB (National Insurance Crime Bureau) re
 - Implement in-transit security measures. Cargo theft can be pre-planned or opportunistic.  
 - Keep a vigilant eye. Include countersurveillance in the duties of your security guards. Trucks and cargo are most vulnerable to theft when sitting idle.  
 - Take advantage of technology, installing alarm surveillance systems and responding to all alerts. Ensure the perimeter, entrances, building doors, and windows are well lit. Vehicle and cargo tracking, immobilizers, and advanced security seals are available.  
--MConduct audits of the supply chain and look for gaps in shipment protection.
+- MConduct audits of the supply chain and look for gaps in shipment protection.
 This definition was developed, not as a legal description for prosecutorial purposes, but to capture the essence of the national cargo theft problem in the United States. The legal elements of knowledge and intent were intentionally omitted.
 
 ## 2.	Literature Reviews
