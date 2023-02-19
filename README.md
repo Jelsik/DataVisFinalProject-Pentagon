@@ -15,7 +15,7 @@ Unfortunately, the problem with cargo theft today has been greatly impacted by t
 The problem with cargo theft isn’t necessarily the amount of what is stolen, but what is stolen. Common targets include food, beverages, and pharmaceuticals. As a result, consumers could be getting expired food or drugs, both with potentially terminal impacts.  
 Brand integrity is vitally important to shippers and should be to consumers as well. From a safety standpoint, consumers should be able to trust that what they consume is indeed safe to do so.  
 
-To limit the impact of such theft, the NICB recommends a layered approach: 
+To limit the impact of such theft, the NICB (National Insurance Crime Bureau) recommends a layered approach: 
 - Screen all employees, including drivers, warehouse employees, and those with access to shipping information. 
 - Train employees making certain to educate truck drivers in hijack awareness and prevention. Training safeguards the employee, trailer, tractor, cargo, and customers.   
 - Be smart in selecting transportation partners, making certain they share your security philosophy.  
