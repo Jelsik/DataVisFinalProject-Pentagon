@@ -132,3 +132,136 @@ The Error Calculation Function (Loss Function) is a measure of the model's perfo
 
 #### Table 1. VIF Values
 <img width="256" alt="Screen Shot 2023-02-09 at 6 23 09 PM" src="https://user-images.githubusercontent.com/26927158/217978573-e0ab3d37-08fc-4f90-aff3-22e075fc8316.png">
+
+The Inflation Factor of Variance (VIF) measures the severity of multicollinearity in regression analysis Regression Analysis Regression analysis is a set of statistical methods used to estimate the relationships between one dependent variable and one or more independent variables. It can be used to evaluate the strength of the relationship between variables and to model the future relationship between them. . It is a statistical concept that indicates the increase in the variance of a regression coefficient as a result of linearity.
+In logistic regression, if the VIF values of the variables are higher than 10, it will cause a multicollinearity problem. Therefore, in the second stage of this model, those with a VIF value of more than 10 will be removed from the model.
+
+#### Table 2. Logit Regression Model
+<img width="539" alt="Screen Shot 2023-02-09 at 6 23 26 PM" src="https://user-images.githubusercontent.com/26927158/217978800-42a35983-9813-4da0-9e8e-f00d8e066873.png">
+
+Looking at the model in general,
+Even if no variables in the model have an effect on the model, the number of dependent variables will be -0.8176. The overall significance of the model is since p = 0.00 < 0.05, it is significant at 95% confidence level.
+
+#### Table 3. GLM Model
+<img width="578" alt="Screen Shot 2023-02-09 at 6 23 39 PM" src="https://user-images.githubusercontent.com/26927158/217979205-29d94993-56e5-4c3b-9057-419f204a2dde.png">
+
+This model also shows that the binomial, that is, the target variable (the dependent variable) is categorical. The Pearson R-squared value is worth making a significant contribution to logit estimation.
+
+The pseudo R squared value can be thought of as the log likelihood of the model with no independent variables and only the constant, the general sum of squares, and the log likelihood of the model with the independent variables, that is, now squares. This value should be between 0.20 and 0.40, but this ratio is low for our model. (0.056)
+
+#### Table 4. Odds Ratio Values for Variables
+<img width="447" alt="Screen Shot 2023-02-09 at 6 23 59 PM" src="https://user-images.githubusercontent.com/26927158/217979318-2861d0fb-a339-4c60-a2a2-b6d6c77b0969.png">
+
+Odds ratios are exponential values of beta coefficients.
+dds ratios must be statistically significant in order to be interpreted. First, we can intuitively examine whether this ratio is not equal to 1. 
+
+If this value is 1, it is clear that the factor in question will not have any effect on the relevant outcome variable. Of course, we need a confidence interval or significance value for this.
+
+If the confidence interval of our odds ratios (θ) covers 1, it is statistically insignificant.
+According to our hypotheses, when Ho is rejected according to a certain margin of error (generally 5%), our odds ratio is statistically significant (p<0.05).
+
+So, how to interpret the odds ratio that we found significant? Extremely simple. If our odds ratio is greater than 1, the relevant factor increases the probability of the outcome variable. If our ratio value is less than 1, it also reduces the probability of occurrence.
+The exponential value (exp) of the beta coefficients we found in the logistic regression analysis is called the odds ratio. Similarly, by performing hypothesis testing, we can determine whether the independent variable in the logistic regression model is statistically significant.
+
+Odds ratios are mainly used in scientific research in medicine and health. It provides great functionality in testing the relationships between important outcome variables such as disease and related factors.
+We can say that the odds ratio values, which are generally 1, greatly increase the probability of the outcome variable in the model. These variables are; offense code, offender race and stolen value are variables.
+
+#### Table 5. Confusion Matrix
+<img width="393" alt="Screen Shot 2023-02-09 at 6 24 20 PM" src="https://user-images.githubusercontent.com/26927158/217979478-d8cde921-34f0-426e-afa3-cedefa284053.png">
+
+Of the data marked in the not recovered group in the test dataset, 21104 were classified correctly and 3449 were classified incorrectly. While it classified 8 of the theft in the recovered group correctly and 31 were classified incorrectly. 
+
+#### Table 6. Model Accuracy
+<img width="444" alt="Screen Shot 2023-02-09 at 6 24 28 PM" src="https://user-images.githubusercontent.com/26927158/217979581-2e8081de-87d5-4158-9f5c-1f6d171c9167.png">
+
+The accuracy score of this model is 86%. Looking at the classification report table; f1 score values are satisfactory.
+
+## Neural Network
+
+### Processing the Data before running the model.
+After intaking the data from `Binary_Classifier.csv`, further analysis was done to make the data as useable as possible when binary encoded, without compromsing the value of the data.
+Upon investigation, the columns `pub_agency_name`, `division_name`, and `county_name` were dropped after being considered superflous. The comparison their data held of city vs. county, and region of U.S. were adequetely covered elsewhere.
+
+The column `state_name` was one singled out for bucketing.
+
+![StateDensity](https://github.com/Jelsik/DataVisFinalProject-Pentagon/blob/JonBranch/PicturesForReport/DensityStates.PNG)
+
+After analyzing the chart and the relative value counts, it was decided that states with 1,000 or fewer entries would be placed into an "Other_US_States/Territories" value.
+
+At that point the data was binary encoded and exported into a freash csv for further use.
+
+### Running Some Models
+
+For the first consideration, the following model was constructed
+
+![Model1](https://github.com/Jelsik/DataVisFinalProject-Pentagon/blob/JonBranch/PicturesForReport/Model1.PNG)
+
+After being run for 100 epochs, the following results were observed:
+
+![Loss/Acc1](https://github.com/Jelsik/DataVisFinalProject-Pentagon/blob/JonBranch/PicturesForReport/Model1Test.PNG)
+
+With a reasonably high accuracy score, it was a good start. However, the loss is considerably high. With the training model flattening out early on in the process, this model shows signs of overfitting, and more models are to be attempted.
+
+#### Attempting To Improve Score/Observations
+
+To begin with, smaller model was deployed onto the same dataset as tested for the original. with two layers of 3 before the output layer.
+
+![3-3-1](model3)
+
+The results were as follows:
+      * Loss was reduced
+      * Accuracy remained similar
+![test3](link)
+
+Following this success, a smaller model was deployed but accuracy suffered immensely.
+
+A second look was then taken at the dataset. The columns `offender_age`, and `offender_ethnicity` were considered superflous, and removed as well in order to reduce the number of object-oriented columns generated during testing. Results, however, were poor.
+
+The dataset was then considered again, with the original data, however , further bucketing was included. These results suffered as well, with large increases in loss and reduction in accuracy.
+
+
+
+### Conclusions On the Two Models
+
+## Outline for the Dashboard with a storyboard of visualizations
+
+### Goal and Objectives: 
+
+The goal is to present the audience the dataset used for our machine learning model to predict whether a lost property is likely to be recovered.
+
+### Visualizations to be presented: 
+
+* Table:
+
+      To present the analysis output how we selected the input variables. 
+
+* Confusion Matrix and Classification Report 
+
+* Map:
+
+      To present the geographical information such as total number of crimes by state. 
+  
+* Pie: 
+
+      To present the recovery flag information. 
+
+* Graphs:
+
+      To present 
+         - Population group
+         - Type of offense
+         - Location where the incident occurred 
+         - Stolen property 
+         - Stolen value    
+
+
+
+
+
+
+
+
+
+### Working Table Layout Example
+
+![ERD](https://github.com/Jelsik/DataVisFinalProject-Pentagon/blob/JonBranch/SQL_And_CSV/Example_ERD.png)
