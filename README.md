@@ -215,6 +215,8 @@ The state with the most cargo theft crime, that is, the region with the darkest 
 #### Graph 1. Recovered and Unrecovered Items Percentage
 ![Graph 1](https://user-images.githubusercontent.com/26927158/219973149-38a87392-5a96-44a6-a793-3fd7c6a8923f.png)
 
+The adjacent chart shows the recovered and unrecovered percentages of cargo theft products. The percentage that is recovered is shown in red, while the percentage that is unrecovered is shown in yellow. According to this graph, while the number of recovered cargo theft products is 18,180, it is 13.34%, and the unrecovered cargo theft products are 118,059 and 86.66%.![image](https://user-images.githubusercontent.com/26927158/219980345-de4a912c-1c8c-4349-a5ac-74e745627b20.png)
+
 #### Graph 2. Recovered and Unrecovered Ranking by State
 ![Graph 2](https://user-images.githubusercontent.com/26927158/219973193-c606304b-bfce-4415-977f-ab72bc567dc9.png)
 
@@ -229,6 +231,20 @@ If we look at the states in the top 8 of the list, North Carolina is the state w
 Chart 3 shows the order of stolen goods by recovery and unrecovered status.
 
 In the part that says other in the first line, we can specify the products that are outside the list. Money is in the second rank and the number of recovered is very low. The most recovered item was the automobile, and the nearly equal number of recovered and non-recovered cars. Trucks residual type is few, but it can be interpreted as the product with the most recovered. Although it is very common for money-based products such as credit cards or wallets to be stolen, the number and probability of not being recovered is very high.
+
+### 5.2. Quick Database ERD Diagram
+
+The ER diagram is defined as the Entity Relationship diagram. The ER diagram is the visualized version of the tables related to this application before they are created in the database when we are going to make an application.
+
+The software application to be written in the ER diagram must have all data holding units. By looking at this diagram, the database preparation of the software is done.
+
+![Screen Shot 2023-02-19 at 4 07 28 PM](https://user-images.githubusercontent.com/26927158/219980388-ce7180f5-193f-4d88-8efb-247c0ebf74e6.png)
+
+In the ER diagram above, there are the tables to be created in the database and the data to be kept in the tables. Only data headers are kept in these tables. There is no need to write the types of the data. The relationships between the tables prepared in the ER diagram are determined.
+The database can be designed easily by looking at the prepared ER diagram.
+In addition, with the data set downloaded from the first FBI Crime site, it can easily be said which columns were included in our analysis and which columns were cleared.
+
+
 
 
 
