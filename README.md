@@ -1,4 +1,4 @@
-Cargo Theft: An Unavoidable Problem within Supply Chain and a Research
+##                                  Cargo Theft: An Unavoidable Problem within Supply Chain and a Research
 
 # Abstract
 The loss of property has been a very serious problem that is widespread, numerous, and persistent. Local news reports abound on the rise in robbery. It is a sad truth, that when people lose property to criminal activity, there is no guarantee it will be returned.
@@ -200,6 +200,42 @@ Volume reduction, data compression. Removal of unimportant attributes
 The preprocessing stage is important for data mining to be successful. With preprocessing, the data is made available for further use. The success of this stage directly affects the final success. With a successful pre-processing stage, it will be possible to achieve precise and clear results.
 
 ## 5.	Analysis and Results
+
+### 5.1. Tableau Visualizations 
+
+For this study, first of all, data visualizations were made on Tableau. Visualization constitutes the basic structure of a study. In order to decide which analysis methods should be applied in a study, first need it is necessary to make visualizations. In this study, the visualizations of each variable are presented on the Tableau study.
+
+#### Map 1. Cargo Theft Ranking by State
+![Map1](https://user-images.githubusercontent.com/26927158/219973137-12eb656b-c116-4efc-8174-1009ea7ee40b.png)
+
+In the map graph above, the states with the highest rates for cargo theft crime are listed from the lowest to the lowest. States with the highest number of cargo theft crimes are indicated with the darkest color. Visualization colors progress from least to most. In the region with the least cargo theft crime, there are 4 and the most 28,218 in the map scale.
+
+The state with the most cargo theft crime, that is, the region with the darkest visualization scale, is the state of North Carolina. The state with the second most cargo theft belongs to the state of Georgia, which is much less than half of North Carolina. The third place with the highest number of cargo theft is Ohio. The state of Texas, where we currently live, ranks fifth with 10,904 stolen items. As can be seen, there is no linear relationship between the size of provinces and the number of cargo thefts.
+
+#### Graph 1. Recovered and Unrecovered Items Percentage
+![Graph 1](https://user-images.githubusercontent.com/26927158/219973149-38a87392-5a96-44a6-a793-3fd7c6a8923f.png)
+
+#### Graph 2. Recovered and Unrecovered Ranking by State
+![Graph 2](https://user-images.githubusercontent.com/26927158/219973193-c606304b-bfce-4415-977f-ab72bc567dc9.png)
+
+The bar chart in graph 2 shows the number of recovered and unrecovered cargo theft items. These states are ranked from the states with the highest number of cargo theft to the least, and recovered cargoes are shown in red and unrecovered cargoes in yellow.
+
+If we look at the states in the top 8 of the list, North Carolina is the state with the most cargo theft products recovered, while North Carolina is the region with the most unrecovered products. Texas is the second most recovered cargo. However, the number of unrecovered is much lower compared to other states. While Georgia is the second state with the most cargo theft, the number of unrecovered and the number recovered is very low. In Ohio, on the other hand, the number of cargo theft recovered is higher than in Georgia.
+
+
+#### Graph 3. Sort of Stolen Properties Recovered and Unrecovered
+![Graph 3](https://user-images.githubusercontent.com/26927158/219973231-9f4df97f-e77b-4928-975b-db4f6a2fd7cc.png)
+
+Chart 3 shows the order of stolen goods by recovery and unrecovered status.
+
+In the part that says other in the first line, we can specify the products that are outside the list. Money is in the second rank and the number of recovered is very low. The most recovered item was the automobile, and the nearly equal number of recovered and non-recovered cars. Trucks residual type is few, but it can be interpreted as the product with the most recovered. Although it is very common for money-based products such as credit cards or wallets to be stolen, the number and probability of not being recovered is very high.
+
+
+
+
+
+
+
 
 
 
