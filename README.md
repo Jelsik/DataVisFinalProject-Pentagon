@@ -281,27 +281,70 @@ Of the data marked in the not recovered group in the test dataset, 21104 were cl
 The accuracy score of this model is 86%. Looking at the classification report table; f1 score values are satisfactory.
 
 #### 5.3.1. Logistic Regression Model Results
-As a result of the examinations made on the model; The offender_sex, offender_race, and offender_ethnicity columns have been removed from work.
+As a result of the examinations made on the model; The offender_sex, offender_race, and offender_ethnicity columns have been removed from study.
 
-However, the removal of these columns as a result of the study did not cause any change, especially in the accuracy value. You can access the second part of the logistic regression model review via the 'Cargo Theft Analysis.ipynb' study.
+However, the removal of these columns as a result of the study did not cause any change, especially in the accuracy value. You can access the second part of the logistic regression model review by the 'Cargo Theft Analysis.ipynb' study.
 
+### 5.4. Clustering Analysis
 
+#### 5.4.1. Assumption Check 
+Some normality tests need to be done before clustering analysis can be performed. Sometimes, even if our data is cleaned and made suitable for analysis, it does not pass normality tests. When such a situation occurs, a meaningful interpretation will not take place even if the analysis is made.
 
+##### Table 6. Shapiro Wilk Test
+<img width="629" alt="Kolmogorov Smirnov Testi" src="https://user-images.githubusercontent.com/26927158/219999976-5e1695ed-ec0e-454d-8042-3f047c9a117f.png">
 
+In cases where N>50, Kolmogorov Smirnov test gives the best normal distribution result.
 
+Ho : The data are in normal distribution.
+H1 : Data are not suitable for normal distribution.
 
+Since p=0.1291>0.05, Ho hypothesis is accepted at 95% confidence interval. That is, the data show a normal distribution.
 
+##### Table 7. ANOVA Table
+<img width="450" alt="ANOVA Table" src="https://user-images.githubusercontent.com/26927158/220000003-2e7e5d99-3878-4fa8-bbd1-148ddff8623e.png">
 
+The above table is made to find out whether the variances are homogeneous or not.
 
+Ho : Variances are homogeneous.
+H1 : Variances are not homogeneous.
 
+Since p = 1.0>0.05, Ho hypothesis is accepted at 95% confidence interval and variances are said to be homogeneous.
 
+##### Table 8. Type II Sum of Squares
+<img width="655" alt="Type II Sum of Squares" src="https://user-images.githubusercontent.com/26927158/220000182-0981d502-672c-4afa-a7be-650f0bb79662.png">
 
+It is possible to think of Eta and Omega Squared values as R squared values as in regression analysis. Although the omega squared value is very low, 0.035 of the change in the recovered value according to the eta squared value can be explained by the stolen value.
 
+#### 5.4.2. Clustering Model
 
+##### Table 9. Stolen and Recovered PCA
+<img width="700" alt="PCAs" src="https://user-images.githubusercontent.com/26927158/220000291-83a3c92f-9a10-43ff-914c-1ddd8f827d2d.png">
 
+We assigned the number of dimensions we wanted to reduce as the n components value, then we finished reducing the size of our dataset with the fit and transform operations. Since we were asked to create a data frame with three principal components for the study, three principal components were created in Table 6 and the eigenvectors of these principal components were given. 
 
+If we look at the Stolen PCA table, the common variance values of the first principal components are much higher than the variance values of the third principal components, while the variance values of the second principal components have the least values.
+In the Recovered PCA table, while the common variance values of the third principal component are higher than the common variance values of the first principal component, the common variance values of the first principal component are higher than the common variance values of the second principal component.
 
+In common variance values, it is the basic component that has the most common variance value above 1, regardless of whether it is positive or negative. This will represent our overall number of clusters.
 
+##### Table 10. Elbow Curves
+<img width="800" alt="Elbow Curves" src="https://user-images.githubusercontent.com/26927158/220000379-efb57f96-193d-412f-9dd4-72a7729abcf4.png">
 
+Here the elbow method comes in handy when we are confused about how to need sets. Our graph looks like an elbow and we have to determine this elbow point. Here the bend point for both of them graphs are around 4 and this is optimal number of clusters for the above data we need to choose. When we continue to increase the number of clusters, if we look carefully after 4.
 
+##### Table 11. Stolen and Recovered Values Classes
+<img width="700" alt="PCAs with Classes" src="https://user-images.githubusercontent.com/26927158/220000455-195cbfd7-b432-405f-ba28-5e3d21c3a68b.png">
+
+When Table 11 is to be interpreted in general, the only difference from Table 9 is that the basic components of the observation values and the class they belong to can be seen.
+
+To give an example, in our stolen values data set, it is observed that for the 0th observation, that is, the first row, it is an observation belonging to the second basic component and also belongs to the 0th class. Likewise, our 16th observation, which is the first value of our recovered values data set, is a member of the first basic component and is in the second class. To reach a general conclusion in both basic components tables, stolen values show a wider distribution, while recovered values are closer to second class membership in terms of class.
+
+##### Table 12. Stolen and Recovered Values Classes by 3D Plot
+<img width="800" alt="Screen Shot 2023-02-19 at 8 52 19 PM" src="https://user-images.githubusercontent.com/26927158/220000651-f3931db9-46a0-46f5-b85e-0fcf5f617a48.png">
+
+The 3D plot generally shows the cluster centers of the stolen and recovered values, that is, the classes. Those shown in red are class 0, those shown in green are class 1, those shown in blue are class 2, while those shown in black are class 3. While class 3, class 2 and class 0 are concentrated in the Stolen values, respectively, there are very few observation values belonging to class 1.
+
+Among the recovered values, there is only one observation value belonging to class 3, while class 1, class 0 and class 2 values are mostly included. In general, it can be concluded that the observation values of class 3 were not recovered.
+
+### 5.5. Artificial Neural Network
 
