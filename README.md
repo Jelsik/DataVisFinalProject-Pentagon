@@ -205,6 +205,9 @@ The preprocessing stage is important for data mining to be successful. With prep
 
 For this study, first of all, data visualizations were made on Tableau. Visualization constitutes the basic structure of a study. In order to decide which analysis methods should be applied in a study, first need it is necessary to make visualizations. In this study, the visualizations of each variable are presented on the Tableau study.
 
+##### Graph 1. Data Year
+![Data Year](https://user-images.githubusercontent.com/26927158/220440574-28cb56f7-3029-449e-8506-c524a7480327.png)
+
 ##### Map 1. Cargo Theft Ranking by State
 ![Map1](https://user-images.githubusercontent.com/26927158/219973137-12eb656b-c116-4efc-8174-1009ea7ee40b.png)
 
@@ -212,23 +215,23 @@ In the map graph above, the states with the highest rates for cargo theft crime 
 
 The state with the most cargo theft crime, that is, the region with the darkest visualization scale, is the state of North Carolina. The state with the second most cargo theft belongs to the state of Georgia, which is much less than half of North Carolina. The third place with the highest number of cargo theft is Ohio. The state of Texas, where we currently live, ranks fifth with 10,904 stolen items. As can be seen, there is no linear relationship between the size of provinces and the number of cargo thefts.
 
-##### Graph 1. Recovered and Unrecovered Items Percentage
+##### Graph 2. Recovered and Unrecovered Items Percentage
 ![Graph 1](https://user-images.githubusercontent.com/26927158/219973149-38a87392-5a96-44a6-a793-3fd7c6a8923f.png)
 
 The adjacent chart shows the recovered and unrecovered percentages of cargo theft products. The percentage that is recovered is shown in red, while the percentage that is unrecovered is shown in yellow. According to this graph, while the number of recovered cargo theft products is 18,180, it is 13.34%, and the unrecovered cargo theft products are 118,059 and 86.66%.
 
-##### Graph 2. Recovered and Unrecovered Ranking by State
+##### Graph 3. Recovered and Unrecovered Ranking by State
 ![Graph 2](https://user-images.githubusercontent.com/26927158/219973193-c606304b-bfce-4415-977f-ab72bc567dc9.png)
 
-The bar chart in graph 2 shows the number of recovered and unrecovered cargo theft items. These states are ranked from the states with the highest number of cargo theft to the least, and recovered cargoes are shown in red and unrecovered cargoes in yellow.
+The bar chart in graph 3 shows the number of recovered and unrecovered cargo theft items. These states are ranked from the states with the highest number of cargo theft to the least, and recovered cargoes are shown in red and unrecovered cargoes in yellow.
 
 If we look at the states in the top 8 of the list, North Carolina is the state with the most cargo theft products recovered, while North Carolina is the region with the most unrecovered products. Texas is the second most recovered cargo. However, the number of unrecovered is much lower compared to other states. While Georgia is the second state with the most cargo theft, the number of unrecovered and the number recovered is very low. In Ohio, on the other hand, the number of cargo theft recovered is higher than in Georgia.
 
 
-##### Graph 3. Sort of Stolen Properties Recovered and Unrecovered
+##### Graph 4. Sort of Stolen Properties Recovered and Unrecovered
 ![Graph 3](https://user-images.githubusercontent.com/26927158/219973231-9f4df97f-e77b-4928-975b-db4f6a2fd7cc.png)
 
-Graph 3 shows the order of stolen goods by recovery and unrecovered status.
+Graph 4 shows the order of stolen goods by recovery and unrecovered status.
 
 In the part that says other in the first line, we can specify the products that are outside the list. Money is in the second rank and the number of recovered is very low. The most recovered item was the automobile, and the nearly equal number of recovered and non-recovered cars. Trucks residual type is few, but it can be interpreted as the product with the most recovered. Although it is very common for money-based products such as credit cards or wallets to be stolen, the number and probability of not being recovered is very high.
 
@@ -350,45 +353,83 @@ Among the recovered values, there is only one observation value belonging to cla
 
 To create an artificial neural network model, the 'BinaryClassifier.csv' dataset was studied.
 
-##### Table 13. Artificial Neural Network Models
-<img width="700" alt="Screen Shot 2023-02-20 at 10 38 47 PM" src="https://user-images.githubusercontent.com/26927158/220257836-dd662f3f-f228-440d-a236-340b7052e231.png">
+#### 5.5.1. The First Model
 
-In Model 1, two hidden layer and 3 nodes in the first layer and 3 nodes in the second layer were created in the formation of the model. While the weight of the first layer with 3 nodes is 360, the weight of the second layer with 3 nodes is 12. The layer called Dense_2 is the output layer and its node is 1. In the 1st and 2nd layers, the activation occurs with relu, in the 3rd layer, that is, in dense_2, the activation occurs with sigmoid and the connection weight of the parameters is 4. The algorithm itself (and the input data) sets these parameters. Hyperparameters are typically learning rate, stack size, or number of epochs. The total number of connections of the parameters is 376 and all of these parameters have been learned during the training phase.
+With the shear weight of object oriented data taken into consideration, before being passed to the first shape of the neural network, the data was tweaked one last time:
 
-In Model 2, first hidden layer is 6 nodes. The layer called Dense_4 is the output layer and its node is 1. Dense_3  the activation occurs with relu, in dense_2, the activation occurs with sigmoid. The total number of connections of the parameters is 727.
+- Redundant Columns pub_agency_name, division_name, and county_name were removed to streamline the dataset.
+- Low crime report States were bucketed into a Other_US_States/Territories column.
 
-In Model 3, two hidden layer and 3 nodes in the first layer and 3 nodes in the second layer were created in the formation of the model. While the weight of the first layer with 3 nodes is 354, the weight of the second layer with 3 nodes is 12. The layer called Dense_2 is the output layer and its node is 1. In the 1st and 2nd layers, the activation occurs with relu, in the 3rd layer, that is, in dense_2, the activation occurs with sigmoid and the connection weight of the parameters is 4. The total number of connections of the parameters is 370. 
+##### Table 13. First Model Shape
+<img width="600" alt="Screen Shot 2023-02-21 at 1 18 41 PM" src="https://user-images.githubusercontent.com/26927158/220438483-7498f705-80f9-4754-8484-ead674782a67.png">
 
-In Model 4, first hidden layer 6 nodes in the second layer 5 nodes and output layer is 1 node included. While the weight of the first layer with 6 nodes is 708, the weight of the second layer with 5 nodes is 35. The layer called Dense_5 is the output layer and its node is 1. In the 1st and 2nd layers, the activation occurs with relu, in the 3rd layer, that is, in dense_2, the activation occurs with sigmoid and the connection weight of the parameters is 6. The total number of connections of the parameters is 749. 
+The results of the first model were promising: an accuracy score of around 86%-87%.
 
-In Model 5, first hidden layer is 6 nodes. The layer called Dense_7 is the output layer and its node is 1. Dense_6  the activation occurs with relu, in dense_7, the activation occurs with sigmoid. The total number of connections of the parameters is 715.
+##### Table 14. Artificial Neural Network Models
+<img width="750" alt="Screen Shot 2023-02-21 at 1 01 07 PM" src="https://user-images.githubusercontent.com/26927158/220438603-38bb0e0d-424f-4ead-b30a-1b96396b39c7.png">
 
-Although the highest total parameter is in model 4, the first hidden layer called dense_3 in model 2 is the model that creates the highest strong connection of the parameters.
+In Model 2, two hidden layer and 3 nodes in the first layer and 3 nodes in the second layer were created in the formation of the model. While the weight of the first layer with 3 nodes is 360, the weight of the second layer with 3 nodes is 12. The layer called Dense_2 is the output layer and its node is 1. In the 1st and 2nd layers, the activation occurs with relu, in the 3rd layer, that is, in dense_2, the activation occurs with sigmoid and the connection weight of the parameters is 4. The algorithm itself (and the input data) sets these parameters. Hyperparameters are typically learning rate, stack size, or number of epochs. The total number of connections of the parameters is 376 and all of these parameters have been learned during the training phase.
 
-##### Table 14. Compare Loss and Accuracy Values for Models
-<img width="700" alt="Screen Shot 2023-02-20 at 10 48 23 PM" src="https://user-images.githubusercontent.com/26927158/220258106-ebd2b8df-03f4-47f9-ab28-bb099ee829ab.png">
+In Model 3, first hidden layer is 6 nodes. The layer called Dense_4 is the output layer and its node is 1. Dense_3  the activation occurs with relu, in dense_2, the activation occurs with sigmoid. The total number of connections of the parameters is 727.
 
-Looking at Model 1, when the epochs is 50, the model accuracy is 0.8640, and when the epochs is 100, the loss value decreases and the accuracy becomes 0.8662.
+In Model 4, two hidden layer and 3 nodes in the first layer and 3 nodes in the second layer were created in the formation of the model. While the weight of the first layer with 3 nodes is 354, the weight of the second layer with 3 nodes is 12. The layer called Dense_2 is the output layer and its node is 1. In the 1st and 2nd layers, the activation occurs with relu, in the 3rd layer, that is, in dense_2, the activation occurs with sigmoid and the connection weight of the parameters is 4. The total number of connections of the parameters is 370. 
 
-For Model 2, the loss value is 0.3144 and the accuracy value is 0.8725.
-For Model 3, the loss value is 0.3325 and the accuracy value is 0.8580.
-In Model 4, the loss value was 0.3293, while the accuracy value was 0.8580.
-For Model 5, the loss value was calculated as 0.3176, while the accuracy value was analyzed as 0.8725.
+In Model 5, first hidden layer 6 nodes in the second layer 5 nodes and output layer is 1 node included. While the weight of the first layer with 6 nodes is 708, the weight of the second layer with 5 nodes is 35. The layer called Dense_5 is the output layer and its node is 1. In the 1st and 2nd layers, the activation occurs with relu, in the 3rd layer, that is, in dense_2, the activation occurs with sigmoid and the connection weight of the parameters is 6. The total number of connections of the parameters is 749. 
+
+In Model 6, first hidden layer is 6 nodes. The layer called Dense_7 is the output layer and its node is 1. Dense_6  the activation occurs with relu, in dense_7, the activation occurs with sigmoid. The total number of connections of the parameters is 715.
+Although the highest total parameter is in model 5, the first hidden layer called dense_3 in model 3 is the model that creates the highest strong connection of the parameters.
+
+##### Table 15. Compare Loss and Accuracy Values for Models
+<img width="650" alt="Screen Shot 2023-02-21 at 1 02 14 PM" src="https://user-images.githubusercontent.com/26927158/220438946-0f070abb-0c36-4641-aa7c-26ec16d98182.png">
+
+- Looking at Model 2, when the epochs is 50, the model accuracy is 0.8640, and when the epochs is 100, the loss value decreases and the accuracy becomes 0.8662.
+- For Model 3, the loss value is 0.3144 and the accuracy value is 0.8725.
+- For Model 4, the loss value is 0.3325 and the accuracy value is 0.8580.
+- In Model 5, the loss value was 0.3293, while the accuracy value was 0.8580.
+- For Model 56, the loss value was calculated as 0.3176, while the accuracy value was analyzed as 0.8725.
+
+#### 5.5.2. The Plateau Problem
+A trend developed during model optimization: changes made to the models/data were not being reflected in the results. Number of units per layer, number of layers, or alterations of the dataset did not affect the model as much as expected. All models hovered around an accuracy of 86-87%.
+When training, each model would stagnate early on, as shown in the figure below.
+
+##### Graph 5. Accuracy of Original Model vs Optimization Model
+<img width="850" alt="Screen Shot 2023-02-21 at 1 13 02 PM" src="https://user-images.githubusercontent.com/26927158/220439258-02715330-084a-42d4-ac33-c444d64d5a47.png">
+
+In all models, the rate of increase of accuracy during training would decline and level out beginning around the twentieth epoch. Furthermore, the changes in value between accuracy at the beginning and the end of the cycle was only a few hundredth or so. The difference in the optimized dataset is even measured in thousandths. A model that ran for a thousand epochs also tested into the same ballpark as the rest of them.
+
+This complication assumedly arises from an inflexible aspect of the original dataset: There are only two numerical columns in the testing dataset. All other columns that would appear to be numerical are categorical, merely using number codes.
+
+Because of this, removing object-oriented columns does not shape affect the shape of the 'graph' in a decisive way. Removing a column may slim the table up, but each column removed is only taking away a value of 1 from the point. More numerical data would make the model more flexible.
 
 ##### Table 15. Comparing ANN Models
-<img width="400" alt="Screen Shot 2023-02-20 at 11 30 24 PM" src="https://user-images.githubusercontent.com/26927158/220258248-ae3e1217-8fd4-4528-83bd-35bcb9c85103.png">
+<img width="400" alt="Screen Shot 2023-02-21 at 1 02 45 PM" src="https://user-images.githubusercontent.com/26927158/220439465-589b972e-b14a-4ae4-a0d9-65bf525a4e90.png">
 
-Model 1 is based on the model with epochs 100, as in other models.
+Model 2 is based on the model with epochs 100, as in other models.
 
 Contrary to the truth, the loss is not a percentage. It is the sum of the mistakes made for each sample in the training and test sets. Loss is usually used in the training process to find the best parameter value for the model, namely the weights in the neural network. The aim is to minimize this value. The low accuracy and high loss means that the model made large errors in most of the data. If both the loss and the accuracy are low, the model can be said to have made minor errors in most of the data. However, if both are high, it means that large errors are made in some data. Finally, if the accuracy is high and the loss low, the model is making low errors on only a portion of the data, which is what it should be.
 
-Among the models, the highest accuracy value and the lowest loss value belong to Model 2. In other words, the data sets included in the analysis for model 2 give the highest reliability.
+Among the models, the highest accuracy value and the lowest loss value belong to Model 3. In other words, the data sets included in the analysis for model 3 give the highest reliability.
 
-Although the accuracy value is 0.8725 in Model 5, the loss value is higher than in Model 2. For this reason, model 2 is the model to be selected with priority.
+Although the accuracy value is 0.8725 in Model 6, the loss value is higher than in Model 3. For this reason, model 3 is the model to be selected with priority.
 
-In ANN models, our goal is always to minimize the loss value. The overall accuracy in Model 2 is high and loss is low, indicating that only a low portion of this dataset has errors.
+In ANN models, our aim is always to minimize the loss value. The overall accuracy in Model 3 is high and loss is low, indicating that only a low portion of this dataset has errors.
 
-##### 5.5.1. Neural Network Model Results
+#### 5.5.3. Neural Network Model Conclusions
+
+The Neural Network model deployed is effective. Considering the complexity of the subject the data is drawn from, an accuracy approaching 87,25% is somewhat suprising. The stagnation is disappointing, but it does lead for further development on the subject.
+Options going forward:
+
+- Enumerate and collect more data from the crime reports to append to the dataset
+- Take the model and analyze examples of success and failure to recover in more depth. Enough data has been given, that more in depth police reports on the selected examples to learn the story behind the data.
+- One example of a success is an attempted theft of millions of dollars of fuel. Knowing the full story could help confirm that whether or not this event was an outlier. Was the fuel theft stopped before it left the depot? Or was it recovered later. There are huge differences in implications from that.
+- Consider failures to recover as well. There is a great deal of story to develop here. Was there the ability to attempt to recover the property? What part of town was the business in? What are the capabilities of the police force in the area? Given these considerations, there may be many cases where cases that succeeded elsewhere failed for reasons not covered in the dataset, muddying the predictive accuracy of the model.
+
+## 6. General Results for Models
+
+## REFERENCES
+
+
+
 
 
 
