@@ -348,3 +348,51 @@ Among the recovered values, there is only one observation value belonging to cla
 
 ### 5.5. Artificial Neural Network
 
+To create an artificial neural network model, the 'BinaryClassifier.csv' dataset was studied.
+
+##### Table 13. Artificial Neural Network Models
+<img width="700" alt="Screen Shot 2023-02-20 at 10 38 47 PM" src="https://user-images.githubusercontent.com/26927158/220257836-dd662f3f-f228-440d-a236-340b7052e231.png">
+
+In Model 1, two hidden layer and 3 nodes in the first layer and 3 nodes in the second layer were created in the formation of the model. While the weight of the first layer with 3 nodes is 360, the weight of the second layer with 3 nodes is 12. The layer called Dense_2 is the output layer and its node is 1. In the 1st and 2nd layers, the activation occurs with relu, in the 3rd layer, that is, in dense_2, the activation occurs with sigmoid and the connection weight of the parameters is 4. The algorithm itself (and the input data) sets these parameters. Hyperparameters are typically learning rate, stack size, or number of epochs. The total number of connections of the parameters is 376 and all of these parameters have been learned during the training phase.
+
+In Model 2, first hidden layer is 6 nodes. The layer called Dense_4 is the output layer and its node is 1. Dense_3  the activation occurs with relu, in dense_2, the activation occurs with sigmoid. The total number of connections of the parameters is 727.
+
+In Model 3, two hidden layer and 3 nodes in the first layer and 3 nodes in the second layer were created in the formation of the model. While the weight of the first layer with 3 nodes is 354, the weight of the second layer with 3 nodes is 12. The layer called Dense_2 is the output layer and its node is 1. In the 1st and 2nd layers, the activation occurs with relu, in the 3rd layer, that is, in dense_2, the activation occurs with sigmoid and the connection weight of the parameters is 4. The total number of connections of the parameters is 370. 
+
+In Model 4, first hidden layer 6 nodes in the second layer 5 nodes and output layer is 1 node included. While the weight of the first layer with 6 nodes is 708, the weight of the second layer with 5 nodes is 35. The layer called Dense_5 is the output layer and its node is 1. In the 1st and 2nd layers, the activation occurs with relu, in the 3rd layer, that is, in dense_2, the activation occurs with sigmoid and the connection weight of the parameters is 6. The total number of connections of the parameters is 749. 
+
+In Model 5, first hidden layer is 6 nodes. The layer called Dense_7 is the output layer and its node is 1. Dense_6  the activation occurs with relu, in dense_7, the activation occurs with sigmoid. The total number of connections of the parameters is 715.
+
+Although the highest total parameter is in model 4, the first hidden layer called dense_3 in model 2 is the model that creates the highest strong connection of the parameters.
+
+##### Table 14. Compare Loss and Accuracy Values for Models
+<img width="700" alt="Screen Shot 2023-02-20 at 10 48 23 PM" src="https://user-images.githubusercontent.com/26927158/220258106-ebd2b8df-03f4-47f9-ab28-bb099ee829ab.png">
+
+Looking at Model 1, when the epochs is 50, the model accuracy is 0.8640, and when the epochs is 100, the loss value decreases and the accuracy becomes 0.8662.
+
+For Model 2, the loss value is 0.3144 and the accuracy value is 0.8725.
+For Model 3, the loss value is 0.3325 and the accuracy value is 0.8580.
+In Model 4, the loss value was 0.3293, while the accuracy value was 0.8580.
+For Model 5, the loss value was calculated as 0.3176, while the accuracy value was analyzed as 0.8725.
+
+##### Table 15. Comparing ANN Models
+<img width="400" alt="Screen Shot 2023-02-20 at 11 30 24 PM" src="https://user-images.githubusercontent.com/26927158/220258248-ae3e1217-8fd4-4528-83bd-35bcb9c85103.png">
+
+Model 1 is based on the model with epochs 100, as in other models.
+
+Contrary to the truth, the loss is not a percentage. It is the sum of the mistakes made for each sample in the training and test sets. Loss is usually used in the training process to find the best parameter value for the model, namely the weights in the neural network. The aim is to minimize this value. The low accuracy and high loss means that the model made large errors in most of the data. If both the loss and the accuracy are low, the model can be said to have made minor errors in most of the data. However, if both are high, it means that large errors are made in some data. Finally, if the accuracy is high and the loss low, the model is making low errors on only a portion of the data, which is what it should be.
+
+Among the models, the highest accuracy value and the lowest loss value belong to Model 2. In other words, the data sets included in the analysis for model 2 give the highest reliability.
+
+Although the accuracy value is 0.8725 in Model 5, the loss value is higher than in Model 2. For this reason, model 2 is the model to be selected with priority.
+
+In ANN models, our goal is always to minimize the loss value. The overall accuracy in Model 2 is high and loss is low, indicating that only a low portion of this dataset has errors.
+
+##### 5.5.1. Neural Network Model Results
+
+
+
+
+
+
+
