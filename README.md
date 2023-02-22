@@ -211,7 +211,7 @@ For this study, first of all, data visualizations were made on Tableau. Visualiz
 ##### Map 1. Cargo Theft Ranking by State
 ![Map1](https://user-images.githubusercontent.com/26927158/219973137-12eb656b-c116-4efc-8174-1009ea7ee40b.png)
 
-In the map graph above, the states with the highest rates for cargo theft crime are listed from the lowest to the lowest. States with the highest number of cargo theft crimes are indicated with the darkest color. Visualization colors progress from least to most. In the region with the least cargo theft crime, there are 4 and the most 28,218 in the map scale.
+In the map graph above, the states with the highest rates for cargo theft crime are listed from the highest to the lowest. States with the highest number of cargo theft crimes are indicated with the darkest color. Visualization colors progress from least to most. In the region with the least cargo theft crime, there are 4 and the most 28,218 in the map scale.
 
 The state with the most cargo theft crime, that is, the region with the darkest visualization scale, is the state of North Carolina. The state with the second most cargo theft belongs to the state of Georgia, which is much less than half of North Carolina. The third place with the highest number of cargo theft is Ohio. The state of Texas, where we currently live, ranks fifth with 10,904 stolen items. As can be seen, there is no linear relationship between the size of provinces and the number of cargo thefts.
 
@@ -252,7 +252,7 @@ In addition, with the data set downloaded from the first FBI Crime site, it can 
 ##### Table 1. VIF Values
 <img width="300" alt="Screen Shot 2023-02-19 at 5 41 02 PM" src="https://user-images.githubusercontent.com/26927158/219982550-aa3d829f-46cf-4821-98a7-1e867711aa68.png">
 
-The Inflation Factor of Variance (VIF) measures the severity of multicollinearity in regression analysis Regression Analysis Regression analysis is a set of statistical methods used to estimate the relationships between one dependent variable and one or more independent variables. It can be used to evaluate the strength of the relationship between variables and to model the future relationship between them. . It is a statistical concept that indicates the increase in the variance of a regression coefficient as a result of linearity. In logistic regression, if the VIF values of the variables are higher than 10, it will cause a multicollinearity problem. Therefore, in the second stage of this model, those with a VIF value of more than 10 will be removed from the model.
+The Inflation Factor of Variance (VIF) measures the severity of multicollinearity in regression analysis is a set of statistical methods used to estimate the relationships between one dependent variable and one or more independent variables. It can be used to evaluate the strength of the relationship between variables and to model the future relationship between them. . It is a statistical concept that indicates the increase in the variance of a regression coefficient as a result of linearity. In logistic regression, if the VIF values of the variables are higher than 10, it will cause a multicollinearity problem. Therefore, in the second stage of this model, those with a VIF value of more than 10 will be removed from the model.
 
 ##### Table 2. Logistic Regression Model
 <img width="600" alt="Screen Shot 2023-02-19 at 5 41 15 PM" src="https://user-images.githubusercontent.com/26927158/219982557-f737c43d-5775-4460-9214-b6806982345f.png">
@@ -263,7 +263,7 @@ The pseudo R squared value can be thought of as the log likelihood of the model 
 ##### Table 3. Odds Ratio Values for Variables
 <img width="600" alt="Screen Shot 2023-02-19 at 5 41 27 PM" src="https://user-images.githubusercontent.com/26927158/219982561-c5453adb-ed3b-4471-8340-545198f61098.png">
 
-Odds ratios are exponential values of beta coefficients. dds ratios must be statistically significant in order to be interpreted. First, we can intuitively examine whether this ratio is not equal to 1.
+Odds ratios are exponential values of beta coefficients. Odds ratios must be statistically significant in order to be interpreted. First, we can intuitively examine whether this ratio is not equal to 1.
 
 If this value is 1, it is clear that the factor in question will not have any effect on the relevant outcome variable. Of course, we need a confidence interval or significance value for this.
 
@@ -293,7 +293,7 @@ However, the removal of these columns as a result of the study did not cause any
 #### 5.4.1. Assumption Check 
 Some normality tests need to be done before clustering analysis can be performed. Sometimes, even if our data is cleaned and made suitable for analysis, it does not pass normality tests. When such a situation occurs, a meaningful interpretation will not take place even if the analysis is made.
 
-##### Table 6. Shapiro Wilk Test
+##### Table 6. Kolmogorov Smirnov Test
 <img width="629" alt="Kolmogorov Smirnov Testi" src="https://user-images.githubusercontent.com/26927158/219999976-5e1695ed-ec0e-454d-8042-3f047c9a117f.png">
 
 In cases where N>50, Kolmogorov Smirnov test gives the best normal distribution result.
@@ -321,9 +321,9 @@ It is possible to think of Eta and Omega Squared values as R squared values as i
 #### 5.4.2. Clustering Model
 
 ##### Table 9. Stolen and Recovered PCA
-<img width="700" alt="PCAs" src="https://user-images.githubusercontent.com/26927158/220000291-83a3c92f-9a10-43ff-914c-1ddd8f827d2d.png">
+<img width="650" alt="PCAs" src="https://user-images.githubusercontent.com/26927158/220000291-83a3c92f-9a10-43ff-914c-1ddd8f827d2d.png">
 
-We assigned the number of dimensions we wanted to reduce as the n components value, then we finished reducing the size of our dataset with the fit and transform operations. Since we were asked to create a data frame with three principal components for the study, three principal components were created in Table 6 and the eigenvectors of these principal components were given. 
+We assigned the number of dimensions we wanted to reduce as the n components value, then we finished reducing the size of our dataset with the fit and transform operations. Since we were asked to create a data frame with three principal components for the study, three principal components were created in Table 9 and the eigenvectors of these principal components were given. 
 
 If we look at the Stolen PCA table, the common variance values of the first principal components are much higher than the variance values of the third principal components, while the variance values of the second principal components have the least values.
 In the Recovered PCA table, while the common variance values of the third principal component are higher than the common variance values of the first principal component, the common variance values of the first principal component are higher than the common variance values of the second principal component.
@@ -401,8 +401,8 @@ This complication assumedly arises from an inflexible aspect of the original dat
 
 Because of this, removing object-oriented columns does not shape affect the shape of the 'graph' in a decisive way. Removing a column may slim the table up, but each column removed is only taking away a value of 1 from the point. More numerical data would make the model more flexible.
 
-##### Table 15. Comparing ANN Models
-<img width="400" alt="Screen Shot 2023-02-21 at 1 02 45 PM" src="https://user-images.githubusercontent.com/26927158/220439465-589b972e-b14a-4ae4-a0d9-65bf525a4e90.png">
+##### Table 16. Comparing ANN Models
+<img width="450" alt="Screen Shot 2023-02-21 at 9 03 02 PM" src="https://user-images.githubusercontent.com/26927158/220510732-afb9da72-3d42-4af6-a18a-f00c8d595545.png">
 
 Model 2 is based on the model with epochs 100, as in other models.
 
