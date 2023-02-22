@@ -206,7 +206,13 @@ The preprocessing stage is important for data mining to be successful. With prep
 For this study, first of all, data visualizations were made on Tableau. Visualization constitutes the basic structure of a study. In order to decide which analysis methods should be applied in a study, first need it is necessary to make visualizations. In this study, the visualizations of each variable are presented on the Tableau study.
 
 ##### Graph 1. Data Year
-![Data Year](https://user-images.githubusercontent.com/26927158/220440574-28cb56f7-3029-449e-8506-c524a7480327.png)
+<img width="597" alt="Screen Shot 2023-02-21 at 11 59 11 PM" src="https://user-images.githubusercontent.com/26927158/220535894-261c0913-7d3f-4aa9-984e-74398939e08d.png">
+
+First of all, looking at the distribution chart of the values in the data set by years, it is seen that the data ranges from 2013 to 2021. While there were accelerations that rose and fell from 2013 to 2018, an incredible increase has occurred as of 2018.
+
+Considering the values on the scale of the table, the minimum number of cargo theft crime was 2,113 while the highest value was 37,637. that is, the lowest value belongs to 2013 and the highest value belongs to 2021. Considering the socio-economic structure of the society, it is a fact that online shopping has increased as of 2013. Unfortunately, this has led to an increase in the number of cargo theft crimes over the years.
+
+The fact that it gained momentum from 2018 to 2019, and that the sales in that period were high, especially in internet sales, can affect this. From 2019 to 2020, although not very high, there was an acceleration at an increasing rate. Especially as of March 2020, the entry of COVID-19 into our lives and the fact that shopping centers were closed to a large extent until 2021 and people started to work from their homes has accelerated the situation unbelievably. When looking at cargo theft crime data reviews in a country, many factors should be considered. The best example of this is the realization of all services online with COVID-19.
 
 ##### Map 1. Cargo Theft Ranking by State
 ![Map1](https://user-images.githubusercontent.com/26927158/219973137-12eb656b-c116-4efc-8174-1009ea7ee40b.png)
@@ -216,7 +222,7 @@ In the map graph above, the states with the highest rates for cargo theft crime 
 The state with the most cargo theft crime, that is, the region with the darkest visualization scale, is the state of North Carolina. The state with the second most cargo theft belongs to the state of Georgia, which is much less than half of North Carolina. The third place with the highest number of cargo theft is Ohio. The state of Texas, where we currently live, ranks fifth with 10,904 stolen items. As can be seen, there is no linear relationship between the size of provinces and the number of cargo thefts.
 
 ##### Graph 2. Recovered and Unrecovered Items Percentage
-![Graph 1](https://user-images.githubusercontent.com/26927158/219973149-38a87392-5a96-44a6-a793-3fd7c6a8923f.png)
+<img width="482" alt="Screen Shot 2023-02-21 at 11 56 52 PM" src="https://user-images.githubusercontent.com/26927158/220535527-8108859f-8ffb-48a6-a3b5-077196dbf3fe.png">
 
 The adjacent chart shows the recovered and unrecovered percentages of cargo theft products. The percentage that is recovered is shown in red, while the percentage that is unrecovered is shown in yellow. According to this graph, while the number of recovered cargo theft products is 18,180, it is 13.34%, and the unrecovered cargo theft products are 118,059 and 86.66%.
 
@@ -427,13 +433,10 @@ Options going forward:
 ## 6. General Results for Models
 
 ## REFERENCES
-
-
-
-
-
-
-
-
-
-
+- Liang, X., Fan, S., Lucy, J. and Yang, Z (2022), Risk analysis of cargo theft from freight supply chains using a data-driven Bayesian network.
+- Ekwall, D. and Lantz, B (2022), Seasonality of incident types in transport crime – Analysis of TAPA statistics.
+- Ekwall, D. and Lantz, B (2017), ”Cargo theft risk and security: Product and location.”. In proceedings of Nofoma, Lund, Sweden.
+- Ebel, B. (2019), Counting Criminals: A Statistical Analysis of Cargo Theft in The United States.
+- Song, R., Huang, L., Cui, W., Óskarsdóttir, M. and Vanthienen, J. (2020), Fraud Detection of Bulk Cargo Theft in Port Using
+Bayesian Network Models.
+- Lorenc, Augustyn, et al. "Predicting the Probability of Cargo Theft for Individual Cases in Railway Transport." Tehnicki Vjesnik - Technical Gazette, vol. 27, no. 2, June 2020
