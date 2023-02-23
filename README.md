@@ -430,7 +430,14 @@ Options going forward:
 - One example of a success is an attempted theft of millions of dollars of fuel. Knowing the full story could help confirm that whether or not this event was an outlier. Was the fuel theft stopped before it left the depot? Or was it recovered later. There are huge differences in implications from that.
 - Consider failures to recover as well. There is a great deal of story to develop here. Was there the ability to attempt to recover the property? What part of town was the business in? What are the capabilities of the police force in the area? Given these considerations, there may be many cases where cases that succeeded elsewhere failed for reasons not covered in the dataset, muddying the predictive accuracy of the model.
 
-## 6. General Results for Models
+## 6. General Conclusions
+
+Although our dataset was too complex, it performed well for Machine Learning models. The data cleaning process was easily completed and the analysis did not take much time.
+Also, our dataset was easy to read and analyze even though it was too complex.
+First, logistic regression analysis was performed and the desired results could not be obtained.
+Secondly, Clustering analysis was performed and it was clearly revealed how many clusters there were and how the data was distributed.
+Thirdly, the Neural Network model, which is the most crucial point of the machine learning part, has been tested 6 times for the highest accuracy value.
+Apart from the fact that our dataset can be used for all studies in general, the best result was obtained through the Neural Network model.
 
 ## REFERENCES
 - Liang, X., Fan, S., Lucy, J. and Yang, Z (2022), Risk analysis of cargo theft from freight supply chains using a data-driven Bayesian network.
