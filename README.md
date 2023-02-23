@@ -305,6 +305,7 @@ Some normality tests need to be done before clustering analysis can be performed
 In cases where N>50, Kolmogorov Smirnov test gives the best normal distribution result.
 
 Ho : The data are in normal distribution.
+
 H1 : Data are not suitable for normal distribution.
 
 Since p=0.1291>0.05, Ho hypothesis is accepted at 95% confidence interval. That is, the data show a normal distribution.
@@ -315,6 +316,7 @@ Since p=0.1291>0.05, Ho hypothesis is accepted at 95% confidence interval. That 
 The above table is made to find out whether the variances are homogeneous or not.
 
 Ho : Variances are homogeneous.
+
 H1 : Variances are not homogeneous.
 
 Since p = 1.0>0.05, Ho hypothesis is accepted at 95% confidence interval and variances are said to be homogeneous.
