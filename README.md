@@ -1,7 +1,7 @@
-Cargo Theft: An Unavoidable Problem within Supply Chain and a Research
+##                                  Cargo Theft: An Unavoidable Problem within Supply Chain and a Research
 
 # Abstract
-The loss of property has been a very serious problem that is widespread, numerous, and persistent. Local news reports abound on the rise in robbery. It is a sad truth, that whe people lose property to criminal activity, there is no guarantee it will be returned.
+The loss of property has been a very serious problem that is widespread, numerous, and persistent. Local news reports abound on the rise in robbery. It is a sad truth, that when people lose property to criminal activity, there is no guarantee it will be returned.
 
 The Federal Bureau of Investigation (FBI) has a Crime Data Explorer (CDE) application that allows visitors to explore their very comprehensive database of crime statistics. One data set of interest is the Cargo Theft Data, compiling information from four years of reports. With this data, the plan is to develop a machine learning model that can predict whether a lost property is likely to be recovered depending on various factors.
 #### Keywords
@@ -15,14 +15,14 @@ Unfortunately, the problem with cargo theft today has been greatly impacted by t
 The problem with cargo theft isn’t necessarily the amount of what is stolen, but what is stolen. Common targets include food, beverages, and pharmaceuticals. As a result, consumers could be getting expired food or drugs, both with potentially terminal impacts.  
 Brand integrity is vitally important to shippers and should be to consumers as well. From a safety standpoint, consumers should be able to trust that what they consume is indeed safe to do so.  
 
-To limit the impact of such theft, the NICB recommends a layered approach: 
+To limit the impact of such theft, the NICB (National Insurance Crime Bureau) recommends a layered approach: 
 - Screen all employees, including drivers, warehouse employees, and those with access to shipping information. 
 - Train employees making certain to educate truck drivers in hijack awareness and prevention. Training safeguards the employee, trailer, tractor, cargo, and customers.   
 - Be smart in selecting transportation partners, making certain they share your security philosophy.  
 - Implement in-transit security measures. Cargo theft can be pre-planned or opportunistic.  
 - Keep a vigilant eye. Include countersurveillance in the duties of your security guards. Trucks and cargo are most vulnerable to theft when sitting idle.  
 - Take advantage of technology, installing alarm surveillance systems and responding to all alerts. Ensure the perimeter, entrances, building doors, and windows are well lit. Vehicle and cargo tracking, immobilizers, and advanced security seals are available.  
--MConduct audits of the supply chain and look for gaps in shipment protection.
+- MConduct audits of the supply chain and look for gaps in shipment protection.
 This definition was developed, not as a legal description for prosecutorial purposes, but to capture the essence of the national cargo theft problem in the United States. The legal elements of knowledge and intent were intentionally omitted.
 
 ## 2.	Literature Reviews
@@ -201,5 +201,242 @@ The preprocessing stage is important for data mining to be successful. With prep
 
 ## 5.	Analysis and Results
 
+### 5.1. Tableau Visualizations 
+
+For this study, first of all, data visualizations were made on Tableau. Visualization constitutes the basic structure of a study. In order to decide which analysis methods should be applied in a study, first need it is necessary to make visualizations. In this study, the visualizations of each variable are presented on the Tableau study.
+
+##### Graph 1. Data Year
+<img width="597" alt="Screen Shot 2023-02-21 at 11 59 11 PM" src="https://user-images.githubusercontent.com/26927158/220535894-261c0913-7d3f-4aa9-984e-74398939e08d.png">
+
+First of all, looking at the distribution chart of the values in the data set by years, it is seen that the data ranges from 2013 to 2021. While there were accelerations that rose and fell from 2013 to 2018, an incredible increase has occurred as of 2018.
+
+Considering the values on the scale of the table, the minimum number of cargo theft crime was 2,113 while the highest value was 37,637. that is, the lowest value belongs to 2013 and the highest value belongs to 2021. Considering the socio-economic structure of the society, it is a fact that online shopping has increased as of 2013. Unfortunately, this has led to an increase in the number of cargo theft crimes over the years.
+
+The fact that it gained momentum from 2018 to 2019, and that the sales in that period were high, especially in internet sales, can affect this. From 2019 to 2020, although not very high, there was an acceleration at an increasing rate. Especially as of March 2020, the entry of COVID-19 into our lives and the fact that shopping centers were closed to a large extent until 2021 and people started to work from their homes has accelerated the situation unbelievably. When looking at cargo theft crime data reviews in a country, many factors should be considered. The best example of this is the realization of all services online with COVID-19.
+
+##### Map 1. Cargo Theft Ranking by State
+![Map1](https://user-images.githubusercontent.com/26927158/219973137-12eb656b-c116-4efc-8174-1009ea7ee40b.png)
+
+In the map graph above, the states with the highest rates for cargo theft crime are listed from the highest to the lowest. States with the highest number of cargo theft crimes are indicated with the darkest color. Visualization colors progress from least to most. In the region with the least cargo theft crime, there are 4 and the most 28,218 in the map scale.
+
+The state with the most cargo theft crime, that is, the region with the darkest visualization scale, is the state of North Carolina. The state with the second most cargo theft belongs to the state of Georgia, which is much less than half of North Carolina. The third place with the highest number of cargo theft is Ohio. The state of Texas, where we currently live, ranks fifth with 10,904 stolen items. As can be seen, there is no linear relationship between the size of provinces and the number of cargo thefts.
+
+##### Graph 2. Recovered and Unrecovered Items Percentage
+<img width="482" alt="Screen Shot 2023-02-21 at 11 56 52 PM" src="https://user-images.githubusercontent.com/26927158/220535527-8108859f-8ffb-48a6-a3b5-077196dbf3fe.png">
+
+The adjacent chart shows the recovered and unrecovered percentages of cargo theft products. The percentage that is recovered is shown in red, while the percentage that is unrecovered is shown in yellow. According to this graph, while the number of recovered cargo theft products is 18,180, it is 13.34%, and the unrecovered cargo theft products are 118,059 and 86.66%.
+
+##### Graph 3. Recovered and Unrecovered Ranking by State
+![Graph 2](https://user-images.githubusercontent.com/26927158/219973193-c606304b-bfce-4415-977f-ab72bc567dc9.png)
+
+The bar chart in graph 3 shows the number of recovered and unrecovered cargo theft items. These states are ranked from the states with the highest number of cargo theft to the least, and recovered cargoes are shown in red and unrecovered cargoes in yellow.
+
+If we look at the states in the top 8 of the list, North Carolina is the state with the most cargo theft products recovered, while North Carolina is the region with the most unrecovered products. Texas is the second most recovered cargo. However, the number of unrecovered is much lower compared to other states. While Georgia is the second state with the most cargo theft, the number of unrecovered and the number recovered is very low. In Ohio, on the other hand, the number of cargo theft recovered is higher than in Georgia.
 
 
+##### Graph 4. Sort of Stolen Properties Recovered and Unrecovered
+![Graph 3](https://user-images.githubusercontent.com/26927158/219973231-9f4df97f-e77b-4928-975b-db4f6a2fd7cc.png)
+
+Graph 4 shows the order of stolen goods by recovery and unrecovered status.
+
+In the part that says other in the first line, we can specify the products that are outside the list. Money is in the second rank and the number of recovered is very low. The most recovered item was the automobile, and the nearly equal number of recovered and non-recovered cars. Trucks residual type is few, but it can be interpreted as the product with the most recovered. Although it is very common for money-based products such as credit cards or wallets to be stolen, the number and probability of not being recovered is very high.
+
+### 5.2. Quick Database ERD Diagram
+
+The ER diagram is defined as the Entity Relationship diagram. The ER diagram is the visualized version of the tables related to this application before they are created in the database when we are going to make an application.
+
+The software application to be written in the ER diagram must have all data holding units. By looking at this diagram, the database preparation of the software is done.
+
+![Screen Shot 2023-02-19 at 4 07 28 PM](https://user-images.githubusercontent.com/26927158/219980388-ce7180f5-193f-4d88-8efb-247c0ebf74e6.png)
+
+In the ER diagram above, there are the tables to be created in the database and the data to be kept in the tables. Only data headers are kept in these tables. There is no need to write the types of the data. The relationships between the tables prepared in the ER diagram are determined.
+The database can be designed easily by looking at the prepared ER diagram.
+In addition, with the data set downloaded from the first FBI Crime site, it can easily be said which columns were included in our analysis and which columns were cleared.
+
+### 5.3. Logistic Regression Model
+
+##### Table 1. VIF Values
+<img width="300" alt="Screen Shot 2023-02-19 at 5 41 02 PM" src="https://user-images.githubusercontent.com/26927158/219982550-aa3d829f-46cf-4821-98a7-1e867711aa68.png">
+
+The Inflation Factor of Variance (VIF) measures the severity of multicollinearity in regression analysis is a set of statistical methods used to estimate the relationships between one dependent variable and one or more independent variables. It can be used to evaluate the strength of the relationship between variables and to model the future relationship between them. . It is a statistical concept that indicates the increase in the variance of a regression coefficient as a result of linearity. In logistic regression, if the VIF values of the variables are higher than 10, it will cause a multicollinearity problem. Therefore, in the second stage of this model, those with a VIF value of more than 10 will be removed from the model.
+
+##### Table 2. Logistic Regression Model
+<img width="600" alt="Screen Shot 2023-02-19 at 5 41 15 PM" src="https://user-images.githubusercontent.com/26927158/219982557-f737c43d-5775-4460-9214-b6806982345f.png">
+
+This model also shows that the binomial, that is, the target variable (the dependent variable) is categorical. The Pearson R-squared value is worth making a significant contribution to logit estimation.
+The pseudo R squared value can be thought of as the log likelihood of the model with no independent variables and only the constant, the general sum of squares, and the log likelihood of the model with the independent variables, that is, now squares. This value should be between 0.20 and 0.40, but this ratio is low for our model. (0.056)
+
+##### Table 3. Odds Ratio Values for Variables
+<img width="600" alt="Screen Shot 2023-02-19 at 5 41 27 PM" src="https://user-images.githubusercontent.com/26927158/219982561-c5453adb-ed3b-4471-8340-545198f61098.png">
+
+Odds ratios are exponential values of beta coefficients. Odds ratios must be statistically significant in order to be interpreted. First, we can intuitively examine whether this ratio is not equal to 1.
+
+If this value is 1, it is clear that the factor in question will not have any effect on the relevant outcome variable. Of course, we need a confidence interval or significance value for this.
+
+If the confidence interval of our odds ratios (θ) covers 1, it is statistically insignificant. According to our hypotheses, when Ho is rejected according to a certain margin of error (generally 5%), our odds ratio is statistically significant (p<0.05).
+
+So, how to interpret the odds ratio that we found significant? Extremely simple. If our odds ratio is greater than 1, the relevant factor increases the probability of the outcome variable. If our ratio value is less than 1, it also reduces the probability of occurrence. The exponential value (exp) of the beta coefficients we found in the logistic regression analysis is called the odds ratio. Similarly, by performing hypothesis testing, we can determine whether the independent variable in the logistic regression model is statistically significant.
+
+Odds ratios are mainly used in scientific research in medicine and health. It provides great functionality in testing the relationships between important outcome variables such as disease and related factors. We can say that the odds ratio values, which are generally 1, greatly increase the probability of the outcome variable in the model. These variables are; offense code, offender race and stolen value are variables.
+
+##### Table 4. Confusion Matrix
+<img width="450" alt="Screen Shot 2023-02-19 at 5 41 42 PM" src="https://user-images.githubusercontent.com/26927158/219982627-6b0bd897-c31e-40c8-9a3c-eac8af10b58e.png">
+
+Of the data marked in the not recovered group in the test dataset, 21104 were classified correctly and 3449 were classified incorrectly. While it classified 8 of the theft in the recovered group correctly and 31 were classified incorrectly.
+
+##### Table 5. Model Accuracy
+<img width="450" alt="Screen Shot 2023-02-19 at 5 41 53 PM" src="https://user-images.githubusercontent.com/26927158/219982682-89441fde-c419-4768-b5fe-cb3300d088a4.png">
+
+The accuracy score of this model is 86%. Looking at the classification report table; f1 score values are satisfactory.
+
+#### 5.3.1. Logistic Regression Model Results
+As a result of the examinations made on the model; The offender_sex, offender_race, and offender_ethnicity columns have been removed from study.
+
+However, the removal of these columns as a result of the study did not cause any change, especially in the accuracy value. You can access the second part of the logistic regression model review by the 'Cargo Theft Analysis.ipynb' study.
+
+### 5.4. Clustering Analysis
+
+#### 5.4.1. Assumption Check 
+Some normality tests need to be done before clustering analysis can be performed. Sometimes, even if our data is cleaned and made suitable for analysis, it does not pass normality tests. When such a situation occurs, a meaningful interpretation will not take place even if the analysis is made.
+
+##### Table 6. Kolmogorov Smirnov Test
+<img width="629" alt="Kolmogorov Smirnov Testi" src="https://user-images.githubusercontent.com/26927158/219999976-5e1695ed-ec0e-454d-8042-3f047c9a117f.png">
+
+In cases where N>50, Kolmogorov Smirnov test gives the best normal distribution result.
+
+Ho : The data are in normal distribution.
+H1 : Data are not suitable for normal distribution.
+
+Since p=0.1291>0.05, Ho hypothesis is accepted at 95% confidence interval. That is, the data show a normal distribution.
+
+##### Table 7. ANOVA Table
+<img width="450" alt="ANOVA Table" src="https://user-images.githubusercontent.com/26927158/220000003-2e7e5d99-3878-4fa8-bbd1-148ddff8623e.png">
+
+The above table is made to find out whether the variances are homogeneous or not.
+
+Ho : Variances are homogeneous.
+H1 : Variances are not homogeneous.
+
+Since p = 1.0>0.05, Ho hypothesis is accepted at 95% confidence interval and variances are said to be homogeneous.
+
+##### Table 8. Type II Sum of Squares
+<img width="655" alt="Type II Sum of Squares" src="https://user-images.githubusercontent.com/26927158/220000182-0981d502-672c-4afa-a7be-650f0bb79662.png">
+
+It is possible to think of Eta and Omega Squared values as R squared values as in regression analysis. Although the omega squared value is very low, 0.035 of the change in the recovered value according to the eta squared value can be explained by the stolen value.
+
+#### 5.4.2. Clustering Model
+
+##### Table 9. Stolen and Recovered PCA
+<img width="650" alt="PCAs" src="https://user-images.githubusercontent.com/26927158/220000291-83a3c92f-9a10-43ff-914c-1ddd8f827d2d.png">
+
+We assigned the number of dimensions we wanted to reduce as the n components value, then we finished reducing the size of our dataset with the fit and transform operations. Since we were asked to create a data frame with three principal components for the study, three principal components were created in Table 9 and the eigenvectors of these principal components were given. 
+
+If we look at the Stolen PCA table, the common variance values of the first principal components are much higher than the variance values of the third principal components, while the variance values of the second principal components have the least values.
+In the Recovered PCA table, while the common variance values of the third principal component are higher than the common variance values of the first principal component, the common variance values of the first principal component are higher than the common variance values of the second principal component.
+
+In common variance values, it is the basic component that has the most common variance value above 1, regardless of whether it is positive or negative. This will represent our overall number of clusters.
+
+##### Table 10. Elbow Curves
+<img width="800" alt="Elbow Curves" src="https://user-images.githubusercontent.com/26927158/220000379-efb57f96-193d-412f-9dd4-72a7729abcf4.png">
+
+Here the elbow method comes in handy when we are confused about how to need sets. Our graph looks like an elbow and we have to determine this elbow point. Here the bend point for both of them graphs are around 4 and this is optimal number of clusters for the above data we need to choose. When we continue to increase the number of clusters, if we look carefully after 4.
+
+##### Table 11. Stolen and Recovered Values Classes
+<img width="700" alt="PCAs with Classes" src="https://user-images.githubusercontent.com/26927158/220000455-195cbfd7-b432-405f-ba28-5e3d21c3a68b.png">
+
+When Table 11 is to be interpreted in general, the only difference from Table 9 is that the basic components of the observation values and the class they belong to can be seen.
+
+To give an example, in our stolen values data set, it is observed that for the 0th observation, that is, the first row, it is an observation belonging to the second basic component and also belongs to the 0th class. Likewise, our 16th observation, which is the first value of our recovered values data set, is a member of the first basic component and is in the second class. To reach a general conclusion in both basic components tables, stolen values show a wider distribution, while recovered values are closer to second class membership in terms of class.
+
+##### Table 12. Stolen and Recovered Values Classes by 3D Plot
+<img width="800" alt="Screen Shot 2023-02-19 at 8 52 19 PM" src="https://user-images.githubusercontent.com/26927158/220000651-f3931db9-46a0-46f5-b85e-0fcf5f617a48.png">
+
+The 3D plot generally shows the cluster centers of the stolen and recovered values, that is, the classes. Those shown in red are class 0, those shown in green are class 1, those shown in blue are class 2, while those shown in black are class 3. While class 3, class 2 and class 0 are concentrated in the Stolen values, respectively, there are very few observation values belonging to class 1.
+
+Among the recovered values, there is only one observation value belonging to class 3, while class 1, class 0 and class 2 values are mostly included. In general, it can be concluded that the observation values of class 3 were not recovered.
+
+### 5.5. Artificial Neural Network
+
+To create an artificial neural network model, the 'BinaryClassifier.csv' dataset was studied.
+
+#### 5.5.1. The First Model
+
+With the shear weight of object oriented data taken into consideration, before being passed to the first shape of the neural network, the data was tweaked one last time:
+
+- Redundant Columns pub_agency_name, division_name, and county_name were removed to streamline the dataset.
+- Low crime report States were bucketed into a Other_US_States/Territories column.
+
+##### Table 13. First Model Shape
+<img width="600" alt="Screen Shot 2023-02-21 at 1 18 41 PM" src="https://user-images.githubusercontent.com/26927158/220438483-7498f705-80f9-4754-8484-ead674782a67.png">
+
+The results of the first model were promising: an accuracy score of around 86%-87%.
+
+##### Table 14. Artificial Neural Network Models
+<img width="750" alt="Screen Shot 2023-02-21 at 1 01 07 PM" src="https://user-images.githubusercontent.com/26927158/220438603-38bb0e0d-424f-4ead-b30a-1b96396b39c7.png">
+
+In Model 2, two hidden layer and 3 nodes in the first layer and 3 nodes in the second layer were created in the formation of the model. While the weight of the first layer with 3 nodes is 360, the weight of the second layer with 3 nodes is 12. The layer called Dense_2 is the output layer and its node is 1. In the 1st and 2nd layers, the activation occurs with relu, in the 3rd layer, that is, in dense_2, the activation occurs with sigmoid and the connection weight of the parameters is 4. The algorithm itself (and the input data) sets these parameters. Hyperparameters are typically learning rate, stack size, or number of epochs. The total number of connections of the parameters is 376 and all of these parameters have been learned during the training phase.
+
+In Model 3, first hidden layer is 6 nodes. The layer called Dense_4 is the output layer and its node is 1. Dense_3  the activation occurs with relu, in dense_2, the activation occurs with sigmoid. The total number of connections of the parameters is 727.
+
+In Model 4, two hidden layer and 3 nodes in the first layer and 3 nodes in the second layer were created in the formation of the model. While the weight of the first layer with 3 nodes is 354, the weight of the second layer with 3 nodes is 12. The layer called Dense_2 is the output layer and its node is 1. In the 1st and 2nd layers, the activation occurs with relu, in the 3rd layer, that is, in dense_2, the activation occurs with sigmoid and the connection weight of the parameters is 4. The total number of connections of the parameters is 370. 
+
+In Model 5, first hidden layer 6 nodes in the second layer 5 nodes and output layer is 1 node included. While the weight of the first layer with 6 nodes is 708, the weight of the second layer with 5 nodes is 35. The layer called Dense_5 is the output layer and its node is 1. In the 1st and 2nd layers, the activation occurs with relu, in the 3rd layer, that is, in dense_2, the activation occurs with sigmoid and the connection weight of the parameters is 6. The total number of connections of the parameters is 749. 
+
+In Model 6, first hidden layer is 6 nodes. The layer called Dense_7 is the output layer and its node is 1. Dense_6  the activation occurs with relu, in dense_7, the activation occurs with sigmoid. The total number of connections of the parameters is 715.
+Although the highest total parameter is in model 5, the first hidden layer called dense_3 in model 3 is the model that creates the highest strong connection of the parameters.
+
+##### Table 15. Compare Loss and Accuracy Values for Models
+<img width="650" alt="Screen Shot 2023-02-21 at 1 02 14 PM" src="https://user-images.githubusercontent.com/26927158/220438946-0f070abb-0c36-4641-aa7c-26ec16d98182.png">
+
+- Looking at Model 2, when the epochs is 50, the model accuracy is 0.8640, and when the epochs is 100, the loss value decreases and the accuracy becomes 0.8662.
+- For Model 3, the loss value is 0.3144 and the accuracy value is 0.8725.
+- For Model 4, the loss value is 0.3325 and the accuracy value is 0.8580.
+- In Model 5, the loss value was 0.3293, while the accuracy value was 0.8580.
+- For Model 56, the loss value was calculated as 0.3176, while the accuracy value was analyzed as 0.8725.
+
+#### 5.5.2. The Plateau Problem
+A trend developed during model optimization: changes made to the models/data were not being reflected in the results. Number of units per layer, number of layers, or alterations of the dataset did not affect the model as much as expected. All models hovered around an accuracy of 86-87%.
+When training, each model would stagnate early on, as shown in the figure below.
+
+##### Graph 5. Accuracy of Original Model vs Optimization Model
+<img width="850" alt="Screen Shot 2023-02-21 at 1 13 02 PM" src="https://user-images.githubusercontent.com/26927158/220439258-02715330-084a-42d4-ac33-c444d64d5a47.png">
+
+In all models, the rate of increase of accuracy during training would decline and level out beginning around the twentieth epoch. Furthermore, the changes in value between accuracy at the beginning and the end of the cycle was only a few hundredth or so. The difference in the optimized dataset is even measured in thousandths. A model that ran for a thousand epochs also tested into the same ballpark as the rest of them.
+
+This complication assumedly arises from an inflexible aspect of the original dataset: There are only two numerical columns in the testing dataset. All other columns that would appear to be numerical are categorical, merely using number codes.
+
+Because of this, removing object-oriented columns does not shape affect the shape of the 'graph' in a decisive way. Removing a column may slim the table up, but each column removed is only taking away a value of 1 from the point. More numerical data would make the model more flexible.
+
+##### Table 16. Comparing ANN Models
+<img width="450" alt="Screen Shot 2023-02-21 at 9 03 02 PM" src="https://user-images.githubusercontent.com/26927158/220510732-afb9da72-3d42-4af6-a18a-f00c8d595545.png">
+
+Model 2 is based on the model with epochs 100, as in other models.
+
+Contrary to the truth, the loss is not a percentage. It is the sum of the mistakes made for each sample in the training and test sets. Loss is usually used in the training process to find the best parameter value for the model, namely the weights in the neural network. The aim is to minimize this value. The low accuracy and high loss means that the model made large errors in most of the data. If both the loss and the accuracy are low, the model can be said to have made minor errors in most of the data. However, if both are high, it means that large errors are made in some data. Finally, if the accuracy is high and the loss low, the model is making low errors on only a portion of the data, which is what it should be.
+
+Among the models, the highest accuracy value and the lowest loss value belong to Model 3. In other words, the data sets included in the analysis for model 3 give the highest reliability.
+
+Although the accuracy value is 0.8725 in Model 6, the loss value is higher than in Model 3. For this reason, model 3 is the model to be selected with priority.
+
+In ANN models, our aim is always to minimize the loss value. The overall accuracy in Model 3 is high and loss is low, indicating that only a low portion of this dataset has errors.
+
+#### 5.5.3. Neural Network Model Conclusions
+
+The Neural Network model deployed is effective. Considering the complexity of the subject the data is drawn from, an accuracy approaching 87,25% is somewhat suprising. The stagnation is disappointing, but it does lead for further development on the subject.
+Options going forward:
+
+- Enumerate and collect more data from the crime reports to append to the dataset
+- Take the model and analyze examples of success and failure to recover in more depth. Enough data has been given, that more in depth police reports on the selected examples to learn the story behind the data.
+- One example of a success is an attempted theft of millions of dollars of fuel. Knowing the full story could help confirm that whether or not this event was an outlier. Was the fuel theft stopped before it left the depot? Or was it recovered later. There are huge differences in implications from that.
+- Consider failures to recover as well. There is a great deal of story to develop here. Was there the ability to attempt to recover the property? What part of town was the business in? What are the capabilities of the police force in the area? Given these considerations, there may be many cases where cases that succeeded elsewhere failed for reasons not covered in the dataset, muddying the predictive accuracy of the model.
+
+## 6. General Results for Models
+
+## REFERENCES
+- Liang, X., Fan, S., Lucy, J. and Yang, Z (2022), Risk analysis of cargo theft from freight supply chains using a data-driven Bayesian network.
+- Ekwall, D. and Lantz, B (2022), Seasonality of incident types in transport crime – Analysis of TAPA statistics.
+- Ekwall, D. and Lantz, B (2017), ”Cargo theft risk and security: Product and location.”. In proceedings of Nofoma, Lund, Sweden.
+- Ebel, B. (2019), Counting Criminals: A Statistical Analysis of Cargo Theft in The United States.
+- Song, R., Huang, L., Cui, W., Óskarsdóttir, M. and Vanthienen, J. (2020), Fraud Detection of Bulk Cargo Theft in Port Using
+Bayesian Network Models.
+- Lorenc, Augustyn, et al. "Predicting the Probability of Cargo Theft for Individual Cases in Railway Transport." Tehnicki Vjesnik - Technical Gazette, vol. 27, no. 2, June 2020
